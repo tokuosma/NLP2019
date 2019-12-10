@@ -1,37 +1,37 @@
 # Using OAuth1 auth helper
 import json
 import os
-import requests
-from requests_oauthlib import OAuth1
+# import requests
+# from requests_oauthlib import OAuth1
+from searchtweets import ResultStream, gen_rule_payload, load_credentials, collect_results
+import argparse
 
-# read secrets
-dirname = os.path.dirname(__file__)
-path = os.path.join(dirname, './secrets/secrets.json')
-with open(path, 'r') as myfile:
-    data=myfile.read()
+parser = argparse.ArgumentParser(description='Get tweets with tag')
+parser.add_argument('hashtag', metavar='hash', type=str,
+                    help='hashtag')
 
-# parse file
-secrets = json.loads(data)
+parser.add_argument('max_results', metavar='max', nargs = '?', type=int,default=10,
+                    help='max number of results')
 
-# init oauth helper
-oauth = OAuth1(secrets['API_KEY'],
-    client_secret=secrets['API_KEY_SECRET'],
-    resource_owner_key=secrets['ACCESS_TOKEN'],
-    resource_owner_secret=secrets['ACCESS_TOKEN_SECRET'],
-    signature_type='auth_header')
+args = parser.parse_args()
 
+hashtag = vars(args)["hashtag"] 
+max_results = vars(args)["max_results"]
 
-url = "https://api.twitter.com/1.1/search/tweets.json"
-# set query
-querystring = {"q":"#islamophobia"}
+print(vars(args))
+creds_30_day_dev = load_credentials(filename="./secrets/secrets.yaml",
+                 yaml_key="search_tweets_30_day_dev",
+                 env_overwrite=False)
 
-# get tweets
-response = requests.request("GET", url, params=querystring, auth=oauth)
+rule = gen_rule_payload("(#" + hashtag + ") lang:en", results_per_call=100) # testing with a sandbox account
+print(rule)
 
-# save tweets
-statuses = json.loads(response.text)
-with open('tweets.json', 'w') as json_file:
-    json.dump(statuses, json_file, indent=4, sort_keys=True)
+tweets = {}
+tweets = collect_results(rule,max_results=max_results,result_stream_args=creds_30_day_dev) # change this if you need to
+
+with open('tweets_' + hashtag + '.json', 'w') as json_file:
+    json.dump(tweets, json_file, indent=4, sort_keys=True)
+
 
 
 
