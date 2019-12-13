@@ -2,6 +2,462 @@
     {
         "contributors": null,
         "coordinates": null,
+        "created_at": "Fri Dec 13 08:57:02 +0000 2019",
+        "display_text_range": [
+            0,
+            140
+        ],
+        "entities": {
+            "hashtags": [],
+            "symbols": [],
+            "urls": [
+                {
+                    "display_url": "twitter.com/i/web/status/1\u2026",
+                    "expanded_url": "https://twitter.com/i/web/status/1205411294339198977",
+                    "indices": [
+                        98,
+                        121
+                    ],
+                    "url": "https://t.co/n2HQ7ui8na"
+                }
+            ],
+            "user_mentions": []
+        },
+        "extended_tweet": {
+            "display_text_range": [
+                0,
+                277
+            ],
+            "entities": {
+                "hashtags": [
+                    {
+                        "indices": [
+                            122,
+                            137
+                        ],
+                        "text": "Radicalistlabs"
+                    },
+                    {
+                        "indices": [
+                            138,
+                            152
+                        ],
+                        "text": "Radicalistjob"
+                    },
+                    {
+                        "indices": [
+                            153,
+                            163
+                        ],
+                        "text": "jobsearch"
+                    },
+                    {
+                        "indices": [
+                            164,
+                            179
+                        ],
+                        "text": "smartjobserach"
+                    },
+                    {
+                        "indices": [
+                            180,
+                            199
+                        ],
+                        "text": "professionalresume"
+                    },
+                    {
+                        "indices": [
+                            200,
+                            215
+                        ],
+                        "text": "resumebuilding"
+                    },
+                    {
+                        "indices": [
+                            216,
+                            224
+                        ],
+                        "text": "jobpost"
+                    },
+                    {
+                        "indices": [
+                            225,
+                            235
+                        ],
+                        "text": "latestjob"
+                    },
+                    {
+                        "indices": [
+                            236,
+                            252
+                        ],
+                        "text": "jobapplications"
+                    },
+                    {
+                        "indices": [
+                            254,
+                            265
+                        ],
+                        "text": "quickmatch"
+                    },
+                    {
+                        "indices": [
+                            266,
+                            277
+                        ],
+                        "text": "Radicalist"
+                    }
+                ],
+                "media": [
+                    {
+                        "display_url": "pic.twitter.com/xVGotOJWC7",
+                        "expanded_url": "https://twitter.com/RadicalistLabs/status/1205411294339198977/photo/1",
+                        "id": 1205411268946907136,
+                        "id_str": "1205411268946907136",
+                        "indices": [
+                            278,
+                            301
+                        ],
+                        "media_url": "http://pbs.twimg.com/media/ELp7KZ3VUAAWkmr.jpg",
+                        "media_url_https": "https://pbs.twimg.com/media/ELp7KZ3VUAAWkmr.jpg",
+                        "sizes": {
+                            "large": {
+                                "h": 669,
+                                "resize": "fit",
+                                "w": 1198
+                            },
+                            "medium": {
+                                "h": 669,
+                                "resize": "fit",
+                                "w": 1198
+                            },
+                            "small": {
+                                "h": 380,
+                                "resize": "fit",
+                                "w": 680
+                            },
+                            "thumb": {
+                                "h": 150,
+                                "resize": "crop",
+                                "w": 150
+                            }
+                        },
+                        "type": "photo",
+                        "url": "https://t.co/xVGotOJWC7"
+                    }
+                ],
+                "symbols": [],
+                "urls": [
+                    {
+                        "display_url": "radicalist.io",
+                        "expanded_url": "https://radicalist.io/",
+                        "indices": [
+                            97,
+                            120
+                        ],
+                        "url": "https://t.co/Slxbn16Tc2"
+                    }
+                ],
+                "user_mentions": []
+            },
+            "extended_entities": {
+                "media": [
+                    {
+                        "display_url": "pic.twitter.com/xVGotOJWC7",
+                        "expanded_url": "https://twitter.com/RadicalistLabs/status/1205411294339198977/photo/1",
+                        "id": 1205411268946907136,
+                        "id_str": "1205411268946907136",
+                        "indices": [
+                            278,
+                            301
+                        ],
+                        "media_url": "http://pbs.twimg.com/media/ELp7KZ3VUAAWkmr.jpg",
+                        "media_url_https": "https://pbs.twimg.com/media/ELp7KZ3VUAAWkmr.jpg",
+                        "sizes": {
+                            "large": {
+                                "h": 669,
+                                "resize": "fit",
+                                "w": 1198
+                            },
+                            "medium": {
+                                "h": 669,
+                                "resize": "fit",
+                                "w": 1198
+                            },
+                            "small": {
+                                "h": 380,
+                                "resize": "fit",
+                                "w": 680
+                            },
+                            "thumb": {
+                                "h": 150,
+                                "resize": "crop",
+                                "w": 150
+                            }
+                        },
+                        "type": "photo",
+                        "url": "https://t.co/xVGotOJWC7"
+                    }
+                ]
+            },
+            "full_text": "Showcase the best of your work and we\u2019ll bring your dream opportunity to your door. \n\nLean More: https://t.co/Slxbn16Tc2\n\n#Radicalistlabs #Radicalistjob #jobsearch #smartjobserach #professionalresume #resumebuilding #jobpost #latestjob #jobapplications  #quickmatch #Radicalist https://t.co/xVGotOJWC7"
+        },
+        "favorite_count": 1,
+        "favorited": false,
+        "filter_level": "low",
+        "geo": null,
+        "id": 1205411294339198977,
+        "id_str": "1205411294339198977",
+        "in_reply_to_screen_name": null,
+        "in_reply_to_status_id": null,
+        "in_reply_to_status_id_str": null,
+        "in_reply_to_user_id": null,
+        "in_reply_to_user_id_str": null,
+        "is_quote_status": false,
+        "lang": "en",
+        "matching_rules": [
+            {
+                "tag": null
+            }
+        ],
+        "place": null,
+        "possibly_sensitive": false,
+        "quote_count": 0,
+        "reply_count": 0,
+        "retweet_count": 0,
+        "retweeted": false,
+        "source": "<a href=\"https://mobile.twitter.com\" rel=\"nofollow\">Twitter Web App</a>",
+        "text": "Showcase the best of your work and we\u2019ll bring your dream opportunity to your door. \n\nLean More:\u2026 https://t.co/n2HQ7ui8na",
+        "truncated": true,
+        "user": {
+            "contributors_enabled": false,
+            "created_at": "Tue May 21 15:35:39 +0000 2019",
+            "default_profile": false,
+            "default_profile_image": false,
+            "description": "Radicalist opens up a whole new world of opportunities. #Resume Builder and personalized #Job Matches powered by AI.",
+            "favourites_count": 126,
+            "follow_request_sent": null,
+            "followers_count": 307,
+            "following": null,
+            "friends_count": 2067,
+            "geo_enabled": false,
+            "id": 1130859706929491970,
+            "id_str": "1130859706929491970",
+            "is_translator": false,
+            "lang": null,
+            "listed_count": 0,
+            "location": null,
+            "name": "Radicalist Labs",
+            "notifications": null,
+            "profile_background_color": "000000",
+            "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+            "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+            "profile_background_tile": false,
+            "profile_banner_url": "https://pbs.twimg.com/profile_banners/1130859706929491970/1558453728",
+            "profile_image_url": "http://pbs.twimg.com/profile_images/1130867598948573184/QV_VuN8u_normal.png",
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/1130867598948573184/QV_VuN8u_normal.png",
+            "profile_link_color": "FAB81E",
+            "profile_sidebar_border_color": "000000",
+            "profile_sidebar_fill_color": "000000",
+            "profile_text_color": "000000",
+            "profile_use_background_image": false,
+            "protected": false,
+            "screen_name": "RadicalistLabs",
+            "statuses_count": 122,
+            "time_zone": null,
+            "translator_type": "none",
+            "url": "https://radicalist.io/",
+            "utc_offset": null,
+            "verified": false
+        }
+    },
+    {
+        "contributors": null,
+        "coordinates": null,
+        "created_at": "Fri Dec 13 03:57:07 +0000 2019",
+        "display_text_range": [
+            13,
+            140
+        ],
+        "entities": {
+            "hashtags": [
+                {
+                    "indices": [
+                        79,
+                        91
+                    ],
+                    "text": "SwingVoters"
+                }
+            ],
+            "symbols": [],
+            "urls": [
+                {
+                    "display_url": "twitter.com/i/web/status/1\u2026",
+                    "expanded_url": "https://twitter.com/i/web/status/1205335815481638916",
+                    "indices": [
+                        117,
+                        140
+                    ],
+                    "url": "https://t.co/8jnUWCKEec"
+                }
+            ],
+            "user_mentions": [
+                {
+                    "id": 5402612,
+                    "id_str": "5402612",
+                    "indices": [
+                        0,
+                        12
+                    ],
+                    "name": "BBC Breaking News",
+                    "screen_name": "BBCBreaking"
+                },
+                {
+                    "id": 14291684,
+                    "id_str": "14291684",
+                    "indices": [
+                        53,
+                        62
+                    ],
+                    "name": "The Labour Party",
+                    "screen_name": "UKLabour"
+                }
+            ]
+        },
+        "extended_tweet": {
+            "display_text_range": [
+                13,
+                297
+            ],
+            "entities": {
+                "hashtags": [
+                    {
+                        "indices": [
+                            79,
+                            91
+                        ],
+                        "text": "SwingVoters"
+                    },
+                    {
+                        "indices": [
+                            118,
+                            129
+                        ],
+                        "text": "Radicalist"
+                    },
+                    {
+                        "indices": [
+                            220,
+                            224
+                        ],
+                        "text": "NHS"
+                    },
+                    {
+                        "indices": [
+                            289,
+                            296
+                        ],
+                        "text": "Tories"
+                    }
+                ],
+                "symbols": [],
+                "urls": [],
+                "user_mentions": [
+                    {
+                        "id": 5402612,
+                        "id_str": "5402612",
+                        "indices": [
+                            0,
+                            12
+                        ],
+                        "name": "BBC Breaking News",
+                        "screen_name": "BBCBreaking"
+                    },
+                    {
+                        "id": 14291684,
+                        "id_str": "14291684",
+                        "indices": [
+                            53,
+                            62
+                        ],
+                        "name": "The Labour Party",
+                        "screen_name": "UKLabour"
+                    }
+                ]
+            },
+            "full_text": "@BBCBreaking Good, but at the VERY COSTLY mistake on @UKLabour candidates. B/c #SwingVoters did NOT want a crazy Left #Radicalist who praised Economies like Venezuela and did little other than to keep funding the broken #NHS / Tax System.\n\nBut Minorities &amp; Disabled are SCREWED w/ the #Tories."
+        },
+        "favorite_count": 0,
+        "favorited": false,
+        "filter_level": "low",
+        "geo": null,
+        "id": 1205335815481638916,
+        "id_str": "1205335815481638916",
+        "in_reply_to_screen_name": "BBCBreaking",
+        "in_reply_to_status_id": 1205330628415234053,
+        "in_reply_to_status_id_str": "1205330628415234053",
+        "in_reply_to_user_id": 5402612,
+        "in_reply_to_user_id_str": "5402612",
+        "is_quote_status": false,
+        "lang": "en",
+        "matching_rules": [
+            {
+                "tag": null
+            }
+        ],
+        "place": null,
+        "quote_count": 0,
+        "reply_count": 0,
+        "retweet_count": 0,
+        "retweeted": false,
+        "source": "<a href=\"http://twitter.com/download/iphone\" rel=\"nofollow\">Twitter for iPhone</a>",
+        "text": "@BBCBreaking Good, but at the VERY COSTLY mistake on @UKLabour candidates. B/c #SwingVoters did NOT want a crazy Le\u2026 https://t.co/8jnUWCKEec",
+        "truncated": true,
+        "user": {
+            "contributors_enabled": false,
+            "created_at": "Mon Nov 25 22:00:55 +0000 2019",
+            "default_profile": true,
+            "default_profile_image": false,
+            "description": "#12 | UX Designer | MA London \u201817 | #ImpeachTrump | \u201cIf you are lonely when you're alone, you are in bad company. #Sartre",
+            "favourites_count": 1119,
+            "follow_request_sent": null,
+            "followers_count": 6,
+            "following": null,
+            "friends_count": 138,
+            "geo_enabled": false,
+            "id": 1199085526046986242,
+            "id_str": "1199085526046986242",
+            "is_translator": false,
+            "lang": null,
+            "listed_count": 0,
+            "location": "Atlantic Side",
+            "name": "WaldenAndPacific\ud83c\udf84",
+            "notifications": null,
+            "profile_background_color": "F5F8FA",
+            "profile_background_image_url": "",
+            "profile_background_image_url_https": "",
+            "profile_background_tile": false,
+            "profile_banner_url": "https://pbs.twimg.com/profile_banners/1199085526046986242/1576007670",
+            "profile_image_url": "http://pbs.twimg.com/profile_images/1199119648261840898/RlQzSu4A_normal.jpg",
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/1199119648261840898/RlQzSu4A_normal.jpg",
+            "profile_link_color": "1DA1F2",
+            "profile_sidebar_border_color": "C0DEED",
+            "profile_sidebar_fill_color": "DDEEF6",
+            "profile_text_color": "333333",
+            "profile_use_background_image": true,
+            "protected": false,
+            "screen_name": "Walden_Pacific",
+            "statuses_count": 565,
+            "time_zone": null,
+            "translator_type": "none",
+            "url": "https://youtu.be/ciAsltEpCkw",
+            "utc_offset": null,
+            "verified": false
+        }
+    },
+    {
+        "contributors": null,
+        "coordinates": null,
         "created_at": "Mon Dec 09 07:49:50 +0000 2019",
         "display_text_range": [
             0,
@@ -207,11 +663,11 @@
             "default_profile": false,
             "default_profile_image": false,
             "description": "Radicalist opens up a whole new world of opportunities. #Resume Builder and personalized #Job Matches powered by AI.",
-            "favourites_count": 124,
+            "favourites_count": 126,
             "follow_request_sent": null,
-            "followers_count": 302,
+            "followers_count": 307,
             "following": null,
-            "friends_count": 2032,
+            "friends_count": 2067,
             "geo_enabled": false,
             "id": 1130859706929491970,
             "id_str": "1130859706929491970",
@@ -235,679 +691,10 @@
             "profile_use_background_image": false,
             "protected": false,
             "screen_name": "RadicalistLabs",
-            "statuses_count": 120,
+            "statuses_count": 122,
             "time_zone": null,
             "translator_type": "none",
             "url": "https://radicalist.io/",
-            "utc_offset": null,
-            "verified": false
-        }
-    },
-    {
-        "contributors": null,
-        "coordinates": null,
-        "created_at": "Sun Dec 08 22:20:19 +0000 2019",
-        "entities": {
-            "hashtags": [],
-            "symbols": [],
-            "urls": [],
-            "user_mentions": [
-                {
-                    "id": 1130859706929491970,
-                    "id_str": "1130859706929491970",
-                    "indices": [
-                        3,
-                        18
-                    ],
-                    "name": "Radicalist Labs",
-                    "screen_name": "RadicalistLabs"
-                }
-            ]
-        },
-        "favorite_count": 0,
-        "favorited": false,
-        "filter_level": "low",
-        "geo": null,
-        "id": 1203801506484563971,
-        "id_str": "1203801506484563971",
-        "in_reply_to_screen_name": null,
-        "in_reply_to_status_id": null,
-        "in_reply_to_status_id_str": null,
-        "in_reply_to_user_id": null,
-        "in_reply_to_user_id_str": null,
-        "is_quote_status": false,
-        "lang": "en",
-        "matching_rules": [
-            {
-                "tag": null
-            }
-        ],
-        "place": null,
-        "quote_count": 0,
-        "reply_count": 0,
-        "retweet_count": 0,
-        "retweeted": false,
-        "retweeted_status": {
-            "contributors": null,
-            "coordinates": null,
-            "created_at": "Sat Dec 07 08:00:16 +0000 2019",
-            "display_text_range": [
-                0,
-                140
-            ],
-            "entities": {
-                "hashtags": [],
-                "symbols": [],
-                "urls": [
-                    {
-                        "display_url": "twitter.com/i/web/status/1\u2026",
-                        "expanded_url": "https://twitter.com/i/web/status/1203222681732210688",
-                        "indices": [
-                            117,
-                            140
-                        ],
-                        "url": "https://t.co/a2qnBfVhw8"
-                    }
-                ],
-                "user_mentions": []
-            },
-            "extended_tweet": {
-                "display_text_range": [
-                    0,
-                    275
-                ],
-                "entities": {
-                    "hashtags": [
-                        {
-                            "indices": [
-                                186,
-                                201
-                            ],
-                            "text": "Radicalistlabs"
-                        },
-                        {
-                            "indices": [
-                                202,
-                                216
-                            ],
-                            "text": "Radicalistjob"
-                        },
-                        {
-                            "indices": [
-                                217,
-                                227
-                            ],
-                            "text": "jobsearch"
-                        },
-                        {
-                            "indices": [
-                                228,
-                                231
-                            ],
-                            "text": "AI"
-                        },
-                        {
-                            "indices": [
-                                232,
-                                240
-                            ],
-                            "text": "jobpost"
-                        },
-                        {
-                            "indices": [
-                                241,
-                                251
-                            ],
-                            "text": "latestjob"
-                        },
-                        {
-                            "indices": [
-                                252,
-                                263
-                            ],
-                            "text": "quickmatch"
-                        },
-                        {
-                            "indices": [
-                                264,
-                                275
-                            ],
-                            "text": "Radicalist"
-                        }
-                    ],
-                    "media": [
-                        {
-                            "display_url": "pic.twitter.com/qt8JI6beYO",
-                            "expanded_url": "https://twitter.com/RadicalistLabs/status/1203222681732210688/photo/1",
-                            "id": 1203222679966375937,
-                            "id_str": "1203222679966375937",
-                            "indices": [
-                                276,
-                                299
-                            ],
-                            "media_url": "http://pbs.twimg.com/media/ELK0pwkW4AEdjPA.jpg",
-                            "media_url_https": "https://pbs.twimg.com/media/ELK0pwkW4AEdjPA.jpg",
-                            "sizes": {
-                                "large": {
-                                    "h": 670,
-                                    "resize": "fit",
-                                    "w": 1200
-                                },
-                                "medium": {
-                                    "h": 670,
-                                    "resize": "fit",
-                                    "w": 1200
-                                },
-                                "small": {
-                                    "h": 380,
-                                    "resize": "fit",
-                                    "w": 680
-                                },
-                                "thumb": {
-                                    "h": 150,
-                                    "resize": "crop",
-                                    "w": 150
-                                }
-                            },
-                            "type": "photo",
-                            "url": "https://t.co/qt8JI6beYO"
-                        }
-                    ],
-                    "symbols": [],
-                    "urls": [
-                        {
-                            "display_url": "radicalist.io/authorization/\u2026",
-                            "expanded_url": "https://radicalist.io/authorization/sign-up",
-                            "indices": [
-                                161,
-                                184
-                            ],
-                            "url": "https://t.co/VHVUuyhPj8"
-                        }
-                    ],
-                    "user_mentions": []
-                },
-                "extended_entities": {
-                    "media": [
-                        {
-                            "display_url": "pic.twitter.com/qt8JI6beYO",
-                            "expanded_url": "https://twitter.com/RadicalistLabs/status/1203222681732210688/photo/1",
-                            "id": 1203222679966375937,
-                            "id_str": "1203222679966375937",
-                            "indices": [
-                                276,
-                                299
-                            ],
-                            "media_url": "http://pbs.twimg.com/media/ELK0pwkW4AEdjPA.jpg",
-                            "media_url_https": "https://pbs.twimg.com/media/ELK0pwkW4AEdjPA.jpg",
-                            "sizes": {
-                                "large": {
-                                    "h": 670,
-                                    "resize": "fit",
-                                    "w": 1200
-                                },
-                                "medium": {
-                                    "h": 670,
-                                    "resize": "fit",
-                                    "w": 1200
-                                },
-                                "small": {
-                                    "h": 380,
-                                    "resize": "fit",
-                                    "w": 680
-                                },
-                                "thumb": {
-                                    "h": 150,
-                                    "resize": "crop",
-                                    "w": 150
-                                }
-                            },
-                            "type": "photo",
-                            "url": "https://t.co/qt8JI6beYO"
-                        }
-                    ]
-                },
-                "full_text": "\u2705 Our goal is making job applications personalized and effortless through the use of cutting-edge technologies including Artificial Intelligence.\n\n\ud83d\udc49 Signup Now: https://t.co/VHVUuyhPj8\n\n#Radicalistlabs #Radicalistjob #jobsearch #AI #jobpost #latestjob #quickmatch #Radicalist https://t.co/qt8JI6beYO"
-            },
-            "favorite_count": 1,
-            "favorited": false,
-            "filter_level": "low",
-            "geo": null,
-            "id": 1203222681732210688,
-            "id_str": "1203222681732210688",
-            "in_reply_to_screen_name": null,
-            "in_reply_to_status_id": null,
-            "in_reply_to_status_id_str": null,
-            "in_reply_to_user_id": null,
-            "in_reply_to_user_id_str": null,
-            "is_quote_status": false,
-            "lang": "en",
-            "place": null,
-            "possibly_sensitive": false,
-            "quote_count": 0,
-            "reply_count": 0,
-            "retweet_count": 2,
-            "retweeted": false,
-            "source": "<a href=\"https://www.hootsuite.com\" rel=\"nofollow\">Hootsuite Inc.</a>",
-            "text": "\u2705 Our goal is making job applications personalized and effortless through the use of cutting-edge technologies incl\u2026 https://t.co/a2qnBfVhw8",
-            "truncated": true,
-            "user": {
-                "contributors_enabled": false,
-                "created_at": "Tue May 21 15:35:39 +0000 2019",
-                "default_profile": false,
-                "default_profile_image": false,
-                "description": "Radicalist opens up a whole new world of opportunities. #Resume Builder and personalized #Job Matches powered by AI.",
-                "favourites_count": 124,
-                "follow_request_sent": null,
-                "followers_count": 302,
-                "following": null,
-                "friends_count": 2032,
-                "geo_enabled": false,
-                "id": 1130859706929491970,
-                "id_str": "1130859706929491970",
-                "is_translator": false,
-                "lang": null,
-                "listed_count": 0,
-                "location": null,
-                "name": "Radicalist Labs",
-                "notifications": null,
-                "profile_background_color": "000000",
-                "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
-                "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
-                "profile_background_tile": false,
-                "profile_banner_url": "https://pbs.twimg.com/profile_banners/1130859706929491970/1558453728",
-                "profile_image_url": "http://pbs.twimg.com/profile_images/1130867598948573184/QV_VuN8u_normal.png",
-                "profile_image_url_https": "https://pbs.twimg.com/profile_images/1130867598948573184/QV_VuN8u_normal.png",
-                "profile_link_color": "FAB81E",
-                "profile_sidebar_border_color": "000000",
-                "profile_sidebar_fill_color": "000000",
-                "profile_text_color": "000000",
-                "profile_use_background_image": false,
-                "protected": false,
-                "screen_name": "RadicalistLabs",
-                "statuses_count": 120,
-                "time_zone": null,
-                "translator_type": "none",
-                "url": "https://radicalist.io/",
-                "utc_offset": null,
-                "verified": false
-            }
-        },
-        "source": "<a href=\"http://twitter.com/download/android\" rel=\"nofollow\">Twitter for Android</a>",
-        "text": "RT @RadicalistLabs: \u2705 Our goal is making job applications personalized and effortless through the use of cutting-edge technologies includin\u2026",
-        "truncated": false,
-        "user": {
-            "contributors_enabled": false,
-            "created_at": "Mon Oct 28 22:46:15 +0000 2019",
-            "default_profile": true,
-            "default_profile_image": false,
-            "description": null,
-            "favourites_count": 126,
-            "follow_request_sent": null,
-            "followers_count": 6,
-            "following": null,
-            "friends_count": 104,
-            "geo_enabled": true,
-            "id": 1188950019052920832,
-            "id_str": "1188950019052920832",
-            "is_translator": false,
-            "lang": null,
-            "listed_count": 0,
-            "location": null,
-            "name": "Abdu Al Kasem",
-            "notifications": null,
-            "profile_background_color": "F5F8FA",
-            "profile_background_image_url": "",
-            "profile_background_image_url_https": "",
-            "profile_background_tile": false,
-            "profile_image_url": "http://pbs.twimg.com/profile_images/1188950651587518469/rItYMvqz_normal.jpg",
-            "profile_image_url_https": "https://pbs.twimg.com/profile_images/1188950651587518469/rItYMvqz_normal.jpg",
-            "profile_link_color": "1DA1F2",
-            "profile_sidebar_border_color": "C0DEED",
-            "profile_sidebar_fill_color": "DDEEF6",
-            "profile_text_color": "333333",
-            "profile_use_background_image": true,
-            "protected": false,
-            "screen_name": "Alkasem83000",
-            "statuses_count": 28,
-            "time_zone": null,
-            "translator_type": "none",
-            "url": "https://youtu.be/yDDbBIf0HCA",
-            "utc_offset": null,
-            "verified": false
-        }
-    },
-    {
-        "contributors": null,
-        "coordinates": null,
-        "created_at": "Sat Dec 07 08:09:13 +0000 2019",
-        "entities": {
-            "hashtags": [],
-            "symbols": [],
-            "urls": [],
-            "user_mentions": [
-                {
-                    "id": 1130859706929491970,
-                    "id_str": "1130859706929491970",
-                    "indices": [
-                        3,
-                        18
-                    ],
-                    "name": "Radicalist Labs",
-                    "screen_name": "RadicalistLabs"
-                }
-            ]
-        },
-        "favorite_count": 0,
-        "favorited": false,
-        "filter_level": "low",
-        "geo": null,
-        "id": 1203224931619741697,
-        "id_str": "1203224931619741697",
-        "in_reply_to_screen_name": null,
-        "in_reply_to_status_id": null,
-        "in_reply_to_status_id_str": null,
-        "in_reply_to_user_id": null,
-        "in_reply_to_user_id_str": null,
-        "is_quote_status": false,
-        "lang": "en",
-        "matching_rules": [
-            {
-                "tag": null
-            }
-        ],
-        "place": null,
-        "quote_count": 0,
-        "reply_count": 0,
-        "retweet_count": 0,
-        "retweeted": false,
-        "retweeted_status": {
-            "contributors": null,
-            "coordinates": null,
-            "created_at": "Sat Dec 07 08:00:16 +0000 2019",
-            "display_text_range": [
-                0,
-                140
-            ],
-            "entities": {
-                "hashtags": [],
-                "symbols": [],
-                "urls": [
-                    {
-                        "display_url": "twitter.com/i/web/status/1\u2026",
-                        "expanded_url": "https://twitter.com/i/web/status/1203222681732210688",
-                        "indices": [
-                            117,
-                            140
-                        ],
-                        "url": "https://t.co/a2qnBfVhw8"
-                    }
-                ],
-                "user_mentions": []
-            },
-            "extended_tweet": {
-                "display_text_range": [
-                    0,
-                    275
-                ],
-                "entities": {
-                    "hashtags": [
-                        {
-                            "indices": [
-                                186,
-                                201
-                            ],
-                            "text": "Radicalistlabs"
-                        },
-                        {
-                            "indices": [
-                                202,
-                                216
-                            ],
-                            "text": "Radicalistjob"
-                        },
-                        {
-                            "indices": [
-                                217,
-                                227
-                            ],
-                            "text": "jobsearch"
-                        },
-                        {
-                            "indices": [
-                                228,
-                                231
-                            ],
-                            "text": "AI"
-                        },
-                        {
-                            "indices": [
-                                232,
-                                240
-                            ],
-                            "text": "jobpost"
-                        },
-                        {
-                            "indices": [
-                                241,
-                                251
-                            ],
-                            "text": "latestjob"
-                        },
-                        {
-                            "indices": [
-                                252,
-                                263
-                            ],
-                            "text": "quickmatch"
-                        },
-                        {
-                            "indices": [
-                                264,
-                                275
-                            ],
-                            "text": "Radicalist"
-                        }
-                    ],
-                    "media": [
-                        {
-                            "display_url": "pic.twitter.com/qt8JI6beYO",
-                            "expanded_url": "https://twitter.com/RadicalistLabs/status/1203222681732210688/photo/1",
-                            "id": 1203222679966375937,
-                            "id_str": "1203222679966375937",
-                            "indices": [
-                                276,
-                                299
-                            ],
-                            "media_url": "http://pbs.twimg.com/media/ELK0pwkW4AEdjPA.jpg",
-                            "media_url_https": "https://pbs.twimg.com/media/ELK0pwkW4AEdjPA.jpg",
-                            "sizes": {
-                                "large": {
-                                    "h": 670,
-                                    "resize": "fit",
-                                    "w": 1200
-                                },
-                                "medium": {
-                                    "h": 670,
-                                    "resize": "fit",
-                                    "w": 1200
-                                },
-                                "small": {
-                                    "h": 380,
-                                    "resize": "fit",
-                                    "w": 680
-                                },
-                                "thumb": {
-                                    "h": 150,
-                                    "resize": "crop",
-                                    "w": 150
-                                }
-                            },
-                            "type": "photo",
-                            "url": "https://t.co/qt8JI6beYO"
-                        }
-                    ],
-                    "symbols": [],
-                    "urls": [
-                        {
-                            "display_url": "radicalist.io/authorization/\u2026",
-                            "expanded_url": "https://radicalist.io/authorization/sign-up",
-                            "indices": [
-                                161,
-                                184
-                            ],
-                            "url": "https://t.co/VHVUuyhPj8"
-                        }
-                    ],
-                    "user_mentions": []
-                },
-                "extended_entities": {
-                    "media": [
-                        {
-                            "display_url": "pic.twitter.com/qt8JI6beYO",
-                            "expanded_url": "https://twitter.com/RadicalistLabs/status/1203222681732210688/photo/1",
-                            "id": 1203222679966375937,
-                            "id_str": "1203222679966375937",
-                            "indices": [
-                                276,
-                                299
-                            ],
-                            "media_url": "http://pbs.twimg.com/media/ELK0pwkW4AEdjPA.jpg",
-                            "media_url_https": "https://pbs.twimg.com/media/ELK0pwkW4AEdjPA.jpg",
-                            "sizes": {
-                                "large": {
-                                    "h": 670,
-                                    "resize": "fit",
-                                    "w": 1200
-                                },
-                                "medium": {
-                                    "h": 670,
-                                    "resize": "fit",
-                                    "w": 1200
-                                },
-                                "small": {
-                                    "h": 380,
-                                    "resize": "fit",
-                                    "w": 680
-                                },
-                                "thumb": {
-                                    "h": 150,
-                                    "resize": "crop",
-                                    "w": 150
-                                }
-                            },
-                            "type": "photo",
-                            "url": "https://t.co/qt8JI6beYO"
-                        }
-                    ]
-                },
-                "full_text": "\u2705 Our goal is making job applications personalized and effortless through the use of cutting-edge technologies including Artificial Intelligence.\n\n\ud83d\udc49 Signup Now: https://t.co/VHVUuyhPj8\n\n#Radicalistlabs #Radicalistjob #jobsearch #AI #jobpost #latestjob #quickmatch #Radicalist https://t.co/qt8JI6beYO"
-            },
-            "favorite_count": 1,
-            "favorited": false,
-            "filter_level": "low",
-            "geo": null,
-            "id": 1203222681732210688,
-            "id_str": "1203222681732210688",
-            "in_reply_to_screen_name": null,
-            "in_reply_to_status_id": null,
-            "in_reply_to_status_id_str": null,
-            "in_reply_to_user_id": null,
-            "in_reply_to_user_id_str": null,
-            "is_quote_status": false,
-            "lang": "en",
-            "place": null,
-            "possibly_sensitive": false,
-            "quote_count": 0,
-            "reply_count": 0,
-            "retweet_count": 2,
-            "retweeted": false,
-            "source": "<a href=\"https://www.hootsuite.com\" rel=\"nofollow\">Hootsuite Inc.</a>",
-            "text": "\u2705 Our goal is making job applications personalized and effortless through the use of cutting-edge technologies incl\u2026 https://t.co/a2qnBfVhw8",
-            "truncated": true,
-            "user": {
-                "contributors_enabled": false,
-                "created_at": "Tue May 21 15:35:39 +0000 2019",
-                "default_profile": false,
-                "default_profile_image": false,
-                "description": "Radicalist opens up a whole new world of opportunities. #Resume Builder and personalized #Job Matches powered by AI.",
-                "favourites_count": 124,
-                "follow_request_sent": null,
-                "followers_count": 302,
-                "following": null,
-                "friends_count": 2032,
-                "geo_enabled": false,
-                "id": 1130859706929491970,
-                "id_str": "1130859706929491970",
-                "is_translator": false,
-                "lang": null,
-                "listed_count": 0,
-                "location": null,
-                "name": "Radicalist Labs",
-                "notifications": null,
-                "profile_background_color": "000000",
-                "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
-                "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
-                "profile_background_tile": false,
-                "profile_banner_url": "https://pbs.twimg.com/profile_banners/1130859706929491970/1558453728",
-                "profile_image_url": "http://pbs.twimg.com/profile_images/1130867598948573184/QV_VuN8u_normal.png",
-                "profile_image_url_https": "https://pbs.twimg.com/profile_images/1130867598948573184/QV_VuN8u_normal.png",
-                "profile_link_color": "FAB81E",
-                "profile_sidebar_border_color": "000000",
-                "profile_sidebar_fill_color": "000000",
-                "profile_text_color": "000000",
-                "profile_use_background_image": false,
-                "protected": false,
-                "screen_name": "RadicalistLabs",
-                "statuses_count": 120,
-                "time_zone": null,
-                "translator_type": "none",
-                "url": "https://radicalist.io/",
-                "utc_offset": null,
-                "verified": false
-            }
-        },
-        "source": "<a href=\"http://gidiblaze.com\" rel=\"nofollow\">Jobs For You</a>",
-        "text": "RT @RadicalistLabs: \u2705 Our goal is making job applications personalized and effortless through the use of cutting-edge technologies includin\u2026",
-        "truncated": false,
-        "user": {
-            "contributors_enabled": false,
-            "created_at": "Fri Jun 08 17:38:44 +0000 2018",
-            "default_profile": true,
-            "default_profile_image": false,
-            "description": "Looking for your perfect job? Discover thousands of hiring jobs all over!",
-            "favourites_count": 218,
-            "follow_request_sent": null,
-            "followers_count": 2634,
-            "following": null,
-            "friends_count": 4164,
-            "geo_enabled": false,
-            "id": 1005142093369675777,
-            "id_str": "1005142093369675777",
-            "is_translator": false,
-            "lang": null,
-            "listed_count": 13,
-            "location": "Ontario, CA",
-            "name": "Jobs For You",
-            "notifications": null,
-            "profile_background_color": "F5F8FA",
-            "profile_background_image_url": "",
-            "profile_background_image_url_https": "",
-            "profile_background_tile": false,
-            "profile_banner_url": "https://pbs.twimg.com/profile_banners/1005142093369675777/1566868229",
-            "profile_image_url": "http://pbs.twimg.com/profile_images/1166155635005820929/JR7w4iAy_normal.jpg",
-            "profile_image_url_https": "https://pbs.twimg.com/profile_images/1166155635005820929/JR7w4iAy_normal.jpg",
-            "profile_link_color": "1DA1F2",
-            "profile_sidebar_border_color": "C0DEED",
-            "profile_sidebar_fill_color": "DDEEF6",
-            "profile_text_color": "333333",
-            "profile_use_background_image": true,
-            "protected": false,
-            "screen_name": "CurrentTrends1",
-            "statuses_count": 31224,
-            "time_zone": null,
-            "translator_type": "none",
-            "url": null,
             "utc_offset": null,
             "verified": false
         }
@@ -1127,11 +914,11 @@
             "default_profile": false,
             "default_profile_image": false,
             "description": "Radicalist opens up a whole new world of opportunities. #Resume Builder and personalized #Job Matches powered by AI.",
-            "favourites_count": 124,
+            "favourites_count": 126,
             "follow_request_sent": null,
-            "followers_count": 302,
+            "followers_count": 307,
             "following": null,
-            "friends_count": 2032,
+            "friends_count": 2067,
             "geo_enabled": false,
             "id": 1130859706929491970,
             "id_str": "1130859706929491970",
@@ -1155,7 +942,7 @@
             "profile_use_background_image": false,
             "protected": false,
             "screen_name": "RadicalistLabs",
-            "statuses_count": 120,
+            "statuses_count": 122,
             "time_zone": null,
             "translator_type": "none",
             "url": "https://radicalist.io/",
@@ -1415,11 +1202,11 @@
             "default_profile": false,
             "default_profile_image": false,
             "description": "Radicalist opens up a whole new world of opportunities. #Resume Builder and personalized #Job Matches powered by AI.",
-            "favourites_count": 124,
+            "favourites_count": 126,
             "follow_request_sent": null,
-            "followers_count": 302,
+            "followers_count": 307,
             "following": null,
-            "friends_count": 2032,
+            "friends_count": 2067,
             "geo_enabled": false,
             "id": 1130859706929491970,
             "id_str": "1130859706929491970",
@@ -1443,7 +1230,7 @@
             "profile_use_background_image": false,
             "protected": false,
             "screen_name": "RadicalistLabs",
-            "statuses_count": 120,
+            "statuses_count": 122,
             "time_zone": null,
             "translator_type": "none",
             "url": "https://radicalist.io/",
@@ -1718,11 +1505,11 @@
             "default_profile": false,
             "default_profile_image": false,
             "description": "Radicalist opens up a whole new world of opportunities. #Resume Builder and personalized #Job Matches powered by AI.",
-            "favourites_count": 124,
+            "favourites_count": 126,
             "follow_request_sent": null,
-            "followers_count": 302,
+            "followers_count": 307,
             "following": null,
-            "friends_count": 2032,
+            "friends_count": 2067,
             "geo_enabled": false,
             "id": 1130859706929491970,
             "id_str": "1130859706929491970",
@@ -1746,7 +1533,7 @@
             "profile_use_background_image": false,
             "protected": false,
             "screen_name": "RadicalistLabs",
-            "statuses_count": 120,
+            "statuses_count": 122,
             "time_zone": null,
             "translator_type": "none",
             "url": "https://radicalist.io/",
@@ -2028,11 +1815,11 @@
             "default_profile": false,
             "default_profile_image": false,
             "description": "Radicalist opens up a whole new world of opportunities. #Resume Builder and personalized #Job Matches powered by AI.",
-            "favourites_count": 124,
+            "favourites_count": 126,
             "follow_request_sent": null,
-            "followers_count": 302,
+            "followers_count": 307,
             "following": null,
-            "friends_count": 2032,
+            "friends_count": 2067,
             "geo_enabled": false,
             "id": 1130859706929491970,
             "id_str": "1130859706929491970",
@@ -2056,7 +1843,7 @@
             "profile_use_background_image": false,
             "protected": false,
             "screen_name": "RadicalistLabs",
-            "statuses_count": 120,
+            "statuses_count": 122,
             "time_zone": null,
             "translator_type": "none",
             "url": "https://radicalist.io/",
@@ -2315,11 +2102,11 @@
             "default_profile": false,
             "default_profile_image": false,
             "description": "Radicalist opens up a whole new world of opportunities. #Resume Builder and personalized #Job Matches powered by AI.",
-            "favourites_count": 124,
+            "favourites_count": 126,
             "follow_request_sent": null,
-            "followers_count": 302,
+            "followers_count": 307,
             "following": null,
-            "friends_count": 2032,
+            "friends_count": 2067,
             "geo_enabled": false,
             "id": 1130859706929491970,
             "id_str": "1130859706929491970",
@@ -2343,360 +2130,10 @@
             "profile_use_background_image": false,
             "protected": false,
             "screen_name": "RadicalistLabs",
-            "statuses_count": 120,
+            "statuses_count": 122,
             "time_zone": null,
             "translator_type": "none",
             "url": "https://radicalist.io/",
-            "utc_offset": null,
-            "verified": false
-        }
-    },
-    {
-        "contributors": null,
-        "coordinates": null,
-        "created_at": "Mon Nov 25 13:13:46 +0000 2019",
-        "entities": {
-            "hashtags": [
-                {
-                    "indices": [
-                        35,
-                        45
-                    ],
-                    "text": "portfolio"
-                }
-            ],
-            "symbols": [],
-            "urls": [],
-            "user_mentions": [
-                {
-                    "id": 1130859706929491970,
-                    "id_str": "1130859706929491970",
-                    "indices": [
-                        3,
-                        18
-                    ],
-                    "name": "Radicalist Labs",
-                    "screen_name": "RadicalistLabs"
-                }
-            ]
-        },
-        "favorite_count": 0,
-        "favorited": false,
-        "filter_level": "low",
-        "geo": null,
-        "id": 1198952920621948930,
-        "id_str": "1198952920621948930",
-        "in_reply_to_screen_name": null,
-        "in_reply_to_status_id": null,
-        "in_reply_to_status_id_str": null,
-        "in_reply_to_user_id": null,
-        "in_reply_to_user_id_str": null,
-        "is_quote_status": false,
-        "lang": "en",
-        "matching_rules": [
-            {
-                "tag": null
-            }
-        ],
-        "place": null,
-        "quote_count": 0,
-        "reply_count": 0,
-        "retweet_count": 0,
-        "retweeted": false,
-        "retweeted_status": {
-            "contributors": null,
-            "coordinates": null,
-            "created_at": "Mon Nov 25 13:11:26 +0000 2019",
-            "display_text_range": [
-                0,
-                140
-            ],
-            "entities": {
-                "hashtags": [
-                    {
-                        "indices": [
-                            15,
-                            25
-                        ],
-                        "text": "portfolio"
-                    }
-                ],
-                "symbols": [],
-                "urls": [
-                    {
-                        "display_url": "twitter.com/i/web/status/1\u2026",
-                        "expanded_url": "https://twitter.com/i/web/status/1198952334732120064",
-                        "indices": [
-                            117,
-                            140
-                        ],
-                        "url": "https://t.co/71r3xQmufg"
-                    }
-                ],
-                "user_mentions": []
-            },
-            "extended_tweet": {
-                "display_text_range": [
-                    0,
-                    277
-                ],
-                "entities": {
-                    "hashtags": [
-                        {
-                            "indices": [
-                                15,
-                                25
-                            ],
-                            "text": "portfolio"
-                        },
-                        {
-                            "indices": [
-                                171,
-                                186
-                            ],
-                            "text": "Radicalistlabs"
-                        },
-                        {
-                            "indices": [
-                                187,
-                                201
-                            ],
-                            "text": "Radicalistjob"
-                        },
-                        {
-                            "indices": [
-                                202,
-                                212
-                            ],
-                            "text": "jobsearch"
-                        },
-                        {
-                            "indices": [
-                                213,
-                                228
-                            ],
-                            "text": "smartjobserach"
-                        },
-                        {
-                            "indices": [
-                                229,
-                                248
-                            ],
-                            "text": "professionalresume"
-                        },
-                        {
-                            "indices": [
-                                249,
-                                264
-                            ],
-                            "text": "resumebuilding"
-                        },
-                        {
-                            "indices": [
-                                266,
-                                277
-                            ],
-                            "text": "Radicalist"
-                        }
-                    ],
-                    "media": [
-                        {
-                            "display_url": "pic.twitter.com/hDNQtq4wdR",
-                            "expanded_url": "https://twitter.com/RadicalistLabs/status/1198952334732120064/photo/1",
-                            "id": 1198952315455070208,
-                            "id_str": "1198952315455070208",
-                            "indices": [
-                                278,
-                                301
-                            ],
-                            "media_url": "http://pbs.twimg.com/media/EKOIx1FU4AAGmQf.jpg",
-                            "media_url_https": "https://pbs.twimg.com/media/EKOIx1FU4AAGmQf.jpg",
-                            "sizes": {
-                                "large": {
-                                    "h": 670,
-                                    "resize": "fit",
-                                    "w": 1200
-                                },
-                                "medium": {
-                                    "h": 670,
-                                    "resize": "fit",
-                                    "w": 1200
-                                },
-                                "small": {
-                                    "h": 380,
-                                    "resize": "fit",
-                                    "w": 680
-                                },
-                                "thumb": {
-                                    "h": 150,
-                                    "resize": "crop",
-                                    "w": 150
-                                }
-                            },
-                            "type": "photo",
-                            "url": "https://t.co/hDNQtq4wdR"
-                        }
-                    ],
-                    "symbols": [],
-                    "urls": [
-                        {
-                            "display_url": "radicalist.io/authorization/\u2026",
-                            "expanded_url": "https://radicalist.io/authorization/sign-up",
-                            "indices": [
-                                146,
-                                169
-                            ],
-                            "url": "https://t.co/VHVUuyzqaG"
-                        }
-                    ],
-                    "user_mentions": []
-                },
-                "extended_entities": {
-                    "media": [
-                        {
-                            "display_url": "pic.twitter.com/hDNQtq4wdR",
-                            "expanded_url": "https://twitter.com/RadicalistLabs/status/1198952334732120064/photo/1",
-                            "id": 1198952315455070208,
-                            "id_str": "1198952315455070208",
-                            "indices": [
-                                278,
-                                301
-                            ],
-                            "media_url": "http://pbs.twimg.com/media/EKOIx1FU4AAGmQf.jpg",
-                            "media_url_https": "https://pbs.twimg.com/media/EKOIx1FU4AAGmQf.jpg",
-                            "sizes": {
-                                "large": {
-                                    "h": 670,
-                                    "resize": "fit",
-                                    "w": 1200
-                                },
-                                "medium": {
-                                    "h": 670,
-                                    "resize": "fit",
-                                    "w": 1200
-                                },
-                                "small": {
-                                    "h": 380,
-                                    "resize": "fit",
-                                    "w": 680
-                                },
-                                "thumb": {
-                                    "h": 150,
-                                    "resize": "crop",
-                                    "w": 150
-                                }
-                            },
-                            "type": "photo",
-                            "url": "https://t.co/hDNQtq4wdR"
-                        }
-                    ]
-                },
-                "full_text": "Remember: your #portfolio is the new interview!\n\nShowcase the best of your work and we\u2019ll bring your dream opportunity to your door.\n\nSignup Now: https://t.co/VHVUuyzqaG\n\n#Radicalistlabs #Radicalistjob #jobsearch #smartjobserach #professionalresume #resumebuilding  #Radicalist https://t.co/hDNQtq4wdR"
-            },
-            "favorite_count": 1,
-            "favorited": false,
-            "filter_level": "low",
-            "geo": null,
-            "id": 1198952334732120064,
-            "id_str": "1198952334732120064",
-            "in_reply_to_screen_name": null,
-            "in_reply_to_status_id": null,
-            "in_reply_to_status_id_str": null,
-            "in_reply_to_user_id": null,
-            "in_reply_to_user_id_str": null,
-            "is_quote_status": false,
-            "lang": "en",
-            "place": null,
-            "possibly_sensitive": false,
-            "quote_count": 0,
-            "reply_count": 0,
-            "retweet_count": 1,
-            "retweeted": false,
-            "source": "<a href=\"https://mobile.twitter.com\" rel=\"nofollow\">Twitter Web App</a>",
-            "text": "Remember: your #portfolio is the new interview!\n\nShowcase the best of your work and we\u2019ll bring your dream opportun\u2026 https://t.co/71r3xQmufg",
-            "truncated": true,
-            "user": {
-                "contributors_enabled": false,
-                "created_at": "Tue May 21 15:35:39 +0000 2019",
-                "default_profile": false,
-                "default_profile_image": false,
-                "description": "Radicalist opens up a whole new world of opportunities. #Resume Builder and personalized #Job Matches powered by AI.",
-                "favourites_count": 124,
-                "follow_request_sent": null,
-                "followers_count": 302,
-                "following": null,
-                "friends_count": 2032,
-                "geo_enabled": false,
-                "id": 1130859706929491970,
-                "id_str": "1130859706929491970",
-                "is_translator": false,
-                "lang": null,
-                "listed_count": 0,
-                "location": null,
-                "name": "Radicalist Labs",
-                "notifications": null,
-                "profile_background_color": "000000",
-                "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
-                "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
-                "profile_background_tile": false,
-                "profile_banner_url": "https://pbs.twimg.com/profile_banners/1130859706929491970/1558453728",
-                "profile_image_url": "http://pbs.twimg.com/profile_images/1130867598948573184/QV_VuN8u_normal.png",
-                "profile_image_url_https": "https://pbs.twimg.com/profile_images/1130867598948573184/QV_VuN8u_normal.png",
-                "profile_link_color": "FAB81E",
-                "profile_sidebar_border_color": "000000",
-                "profile_sidebar_fill_color": "000000",
-                "profile_text_color": "000000",
-                "profile_use_background_image": false,
-                "protected": false,
-                "screen_name": "RadicalistLabs",
-                "statuses_count": 120,
-                "time_zone": null,
-                "translator_type": "none",
-                "url": "https://radicalist.io/",
-                "utc_offset": null,
-                "verified": false
-            }
-        },
-        "source": "<a href=\"https://launchpass.com/jobseek\" rel=\"nofollow\">Jobseekersv35</a>",
-        "text": "RT @RadicalistLabs: Remember: your #portfolio is the new interview!\n\nShowcase the best of your work and we\u2019ll bring your dream opportunity\u2026",
-        "truncated": false,
-        "user": {
-            "contributors_enabled": false,
-            "created_at": "Wed Mar 28 14:42:44 +0000 2018",
-            "default_profile": true,
-            "default_profile_image": false,
-            "description": "If you're looking for a new job, check out the slack channel!",
-            "favourites_count": 5,
-            "follow_request_sent": null,
-            "followers_count": 66,
-            "following": null,
-            "friends_count": 16,
-            "geo_enabled": false,
-            "id": 979005874206330880,
-            "id_str": "979005874206330880",
-            "is_translator": false,
-            "lang": null,
-            "listed_count": 3,
-            "location": "New York, NY",
-            "name": "Job Seek",
-            "notifications": null,
-            "profile_background_color": "F5F8FA",
-            "profile_background_image_url": "",
-            "profile_background_image_url_https": "",
-            "profile_background_tile": false,
-            "profile_image_url": "http://pbs.twimg.com/profile_images/979007311539851264/uteGzVJb_normal.jpg",
-            "profile_image_url_https": "https://pbs.twimg.com/profile_images/979007311539851264/uteGzVJb_normal.jpg",
-            "profile_link_color": "1DA1F2",
-            "profile_sidebar_border_color": "C0DEED",
-            "profile_sidebar_fill_color": "DDEEF6",
-            "profile_text_color": "333333",
-            "profile_use_background_image": true,
-            "protected": false,
-            "screen_name": "jobseekslack",
-            "statuses_count": 3878,
-            "time_zone": null,
-            "translator_type": "none",
-            "url": "https://launchpass.com/jobseek",
             "utc_offset": null,
             "verified": false
         }
@@ -2924,11 +2361,11 @@
             "default_profile": false,
             "default_profile_image": false,
             "description": "Radicalist opens up a whole new world of opportunities. #Resume Builder and personalized #Job Matches powered by AI.",
-            "favourites_count": 124,
+            "favourites_count": 126,
             "follow_request_sent": null,
-            "followers_count": 302,
+            "followers_count": 307,
             "following": null,
-            "friends_count": 2032,
+            "friends_count": 2067,
             "geo_enabled": false,
             "id": 1130859706929491970,
             "id_str": "1130859706929491970",
@@ -2952,7 +2389,7 @@
             "profile_use_background_image": false,
             "protected": false,
             "screen_name": "RadicalistLabs",
-            "statuses_count": 120,
+            "statuses_count": 122,
             "time_zone": null,
             "translator_type": "none",
             "url": "https://radicalist.io/",
@@ -3197,11 +2634,11 @@
             "default_profile": false,
             "default_profile_image": false,
             "description": "Radicalist opens up a whole new world of opportunities. #Resume Builder and personalized #Job Matches powered by AI.",
-            "favourites_count": 124,
+            "favourites_count": 126,
             "follow_request_sent": null,
-            "followers_count": 302,
+            "followers_count": 307,
             "following": null,
-            "friends_count": 2032,
+            "friends_count": 2067,
             "geo_enabled": false,
             "id": 1130859706929491970,
             "id_str": "1130859706929491970",
@@ -3225,7 +2662,7 @@
             "profile_use_background_image": false,
             "protected": false,
             "screen_name": "RadicalistLabs",
-            "statuses_count": 120,
+            "statuses_count": 122,
             "time_zone": null,
             "translator_type": "none",
             "url": "https://radicalist.io/",
@@ -3493,11 +2930,11 @@
             "default_profile": false,
             "default_profile_image": false,
             "description": "Radicalist opens up a whole new world of opportunities. #Resume Builder and personalized #Job Matches powered by AI.",
-            "favourites_count": 124,
+            "favourites_count": 126,
             "follow_request_sent": null,
-            "followers_count": 302,
+            "followers_count": 307,
             "following": null,
-            "friends_count": 2032,
+            "friends_count": 2067,
             "geo_enabled": false,
             "id": 1130859706929491970,
             "id_str": "1130859706929491970",
@@ -3521,7 +2958,7 @@
             "profile_use_background_image": false,
             "protected": false,
             "screen_name": "RadicalistLabs",
-            "statuses_count": 120,
+            "statuses_count": 122,
             "time_zone": null,
             "translator_type": "none",
             "url": "https://radicalist.io/",
@@ -3810,11 +3247,11 @@
             "default_profile": false,
             "default_profile_image": false,
             "description": "Radicalist opens up a whole new world of opportunities. #Resume Builder and personalized #Job Matches powered by AI.",
-            "favourites_count": 124,
+            "favourites_count": 126,
             "follow_request_sent": null,
-            "followers_count": 302,
+            "followers_count": 307,
             "following": null,
-            "friends_count": 2032,
+            "friends_count": 2067,
             "geo_enabled": false,
             "id": 1130859706929491970,
             "id_str": "1130859706929491970",
@@ -3838,399 +3275,10 @@
             "profile_use_background_image": false,
             "protected": false,
             "screen_name": "RadicalistLabs",
-            "statuses_count": 120,
+            "statuses_count": 122,
             "time_zone": null,
             "translator_type": "none",
             "url": "https://radicalist.io/",
-            "utc_offset": null,
-            "verified": false
-        }
-    },
-    {
-        "contributors": null,
-        "coordinates": null,
-        "created_at": "Thu Nov 14 12:13:32 +0000 2019",
-        "entities": {
-            "hashtags": [
-                {
-                    "indices": [
-                        108,
-                        123
-                    ],
-                    "text": "Radicalistlabs"
-                },
-                {
-                    "indices": [
-                        124,
-                        138
-                    ],
-                    "text": "Radicalistjob"
-                }
-            ],
-            "symbols": [],
-            "urls": [],
-            "user_mentions": [
-                {
-                    "id": 1130859706929491970,
-                    "id_str": "1130859706929491970",
-                    "indices": [
-                        3,
-                        18
-                    ],
-                    "name": "Radicalist Labs",
-                    "screen_name": "RadicalistLabs"
-                }
-            ]
-        },
-        "favorite_count": 0,
-        "favorited": false,
-        "filter_level": "low",
-        "geo": null,
-        "id": 1194951494421950464,
-        "id_str": "1194951494421950464",
-        "in_reply_to_screen_name": null,
-        "in_reply_to_status_id": null,
-        "in_reply_to_status_id_str": null,
-        "in_reply_to_user_id": null,
-        "in_reply_to_user_id_str": null,
-        "is_quote_status": false,
-        "lang": "en",
-        "matching_rules": [
-            {
-                "tag": null
-            }
-        ],
-        "place": null,
-        "quote_count": 0,
-        "reply_count": 0,
-        "retweet_count": 0,
-        "retweeted": false,
-        "retweeted_status": {
-            "contributors": null,
-            "coordinates": null,
-            "created_at": "Thu Nov 14 12:10:26 +0000 2019",
-            "display_text_range": [
-                0,
-                140
-            ],
-            "entities": {
-                "hashtags": [
-                    {
-                        "indices": [
-                            88,
-                            103
-                        ],
-                        "text": "Radicalistlabs"
-                    }
-                ],
-                "symbols": [],
-                "urls": [
-                    {
-                        "display_url": "twitter.com/i/web/status/1\u2026",
-                        "expanded_url": "https://twitter.com/i/web/status/1194950714885206016",
-                        "indices": [
-                            105,
-                            128
-                        ],
-                        "url": "https://t.co/9NRwEb1OEk"
-                    }
-                ],
-                "user_mentions": []
-            },
-            "extended_tweet": {
-                "display_text_range": [
-                    0,
-                    275
-                ],
-                "entities": {
-                    "hashtags": [
-                        {
-                            "indices": [
-                                88,
-                                103
-                            ],
-                            "text": "Radicalistlabs"
-                        },
-                        {
-                            "indices": [
-                                104,
-                                118
-                            ],
-                            "text": "Radicalistjob"
-                        },
-                        {
-                            "indices": [
-                                119,
-                                129
-                            ],
-                            "text": "jobsearch"
-                        },
-                        {
-                            "indices": [
-                                130,
-                                145
-                            ],
-                            "text": "smartjobserach"
-                        },
-                        {
-                            "indices": [
-                                146,
-                                165
-                            ],
-                            "text": "professionalresume"
-                        },
-                        {
-                            "indices": [
-                                166,
-                                177
-                            ],
-                            "text": "quickmatch"
-                        },
-                        {
-                            "indices": [
-                                178,
-                                193
-                            ],
-                            "text": "resumebuilding"
-                        },
-                        {
-                            "indices": [
-                                194,
-                                202
-                            ],
-                            "text": "jobpost"
-                        },
-                        {
-                            "indices": [
-                                203,
-                                219
-                            ],
-                            "text": "jobapplications"
-                        },
-                        {
-                            "indices": [
-                                220,
-                                236
-                            ],
-                            "text": "resumetemplates"
-                        },
-                        {
-                            "indices": [
-                                237,
-                                243
-                            ],
-                            "text": "swipe"
-                        },
-                        {
-                            "indices": [
-                                244,
-                                251
-                            ],
-                            "text": "rspace"
-                        },
-                        {
-                            "indices": [
-                                252,
-                                263
-                            ],
-                            "text": "jobopening"
-                        },
-                        {
-                            "indices": [
-                                264,
-                                275
-                            ],
-                            "text": "Radicalist"
-                        }
-                    ],
-                    "media": [
-                        {
-                            "display_url": "pic.twitter.com/lHAz7RimVJ",
-                            "expanded_url": "https://twitter.com/RadicalistLabs/status/1194950714885206016/photo/1",
-                            "id": 1194950698321899520,
-                            "id_str": "1194950698321899520",
-                            "indices": [
-                                276,
-                                299
-                            ],
-                            "media_url": "http://pbs.twimg.com/media/EJVRVDmU8AARCNa.jpg",
-                            "media_url_https": "https://pbs.twimg.com/media/EJVRVDmU8AARCNa.jpg",
-                            "sizes": {
-                                "large": {
-                                    "h": 670,
-                                    "resize": "fit",
-                                    "w": 1200
-                                },
-                                "medium": {
-                                    "h": 670,
-                                    "resize": "fit",
-                                    "w": 1200
-                                },
-                                "small": {
-                                    "h": 380,
-                                    "resize": "fit",
-                                    "w": 680
-                                },
-                                "thumb": {
-                                    "h": 150,
-                                    "resize": "crop",
-                                    "w": 150
-                                }
-                            },
-                            "type": "photo",
-                            "url": "https://t.co/lHAz7RimVJ"
-                        }
-                    ],
-                    "symbols": [],
-                    "urls": [],
-                    "user_mentions": []
-                },
-                "extended_entities": {
-                    "media": [
-                        {
-                            "display_url": "pic.twitter.com/lHAz7RimVJ",
-                            "expanded_url": "https://twitter.com/RadicalistLabs/status/1194950714885206016/photo/1",
-                            "id": 1194950698321899520,
-                            "id_str": "1194950698321899520",
-                            "indices": [
-                                276,
-                                299
-                            ],
-                            "media_url": "http://pbs.twimg.com/media/EJVRVDmU8AARCNa.jpg",
-                            "media_url_https": "https://pbs.twimg.com/media/EJVRVDmU8AARCNa.jpg",
-                            "sizes": {
-                                "large": {
-                                    "h": 670,
-                                    "resize": "fit",
-                                    "w": 1200
-                                },
-                                "medium": {
-                                    "h": 670,
-                                    "resize": "fit",
-                                    "w": 1200
-                                },
-                                "small": {
-                                    "h": 380,
-                                    "resize": "fit",
-                                    "w": 680
-                                },
-                                "thumb": {
-                                    "h": 150,
-                                    "resize": "crop",
-                                    "w": 150
-                                }
-                            },
-                            "type": "photo",
-                            "url": "https://t.co/lHAz7RimVJ"
-                        }
-                    ]
-                },
-                "full_text": "\u201cI am not a product of circumstances. I am a product of my decisions.\u201d ~ Stephen Covey\n\n#Radicalistlabs #Radicalistjob #jobsearch #smartjobserach #professionalresume #quickmatch #resumebuilding #jobpost #jobapplications #resumetemplates #swipe #rspace #jobopening #Radicalist https://t.co/lHAz7RimVJ"
-            },
-            "favorite_count": 1,
-            "favorited": false,
-            "filter_level": "low",
-            "geo": null,
-            "id": 1194950714885206016,
-            "id_str": "1194950714885206016",
-            "in_reply_to_screen_name": null,
-            "in_reply_to_status_id": null,
-            "in_reply_to_status_id_str": null,
-            "in_reply_to_user_id": null,
-            "in_reply_to_user_id_str": null,
-            "is_quote_status": false,
-            "lang": "en",
-            "place": null,
-            "possibly_sensitive": false,
-            "quote_count": 0,
-            "reply_count": 0,
-            "retweet_count": 1,
-            "retweeted": false,
-            "source": "<a href=\"https://mobile.twitter.com\" rel=\"nofollow\">Twitter Web App</a>",
-            "text": "\u201cI am not a product of circumstances. I am a product of my decisions.\u201d ~ Stephen Covey\n\n#Radicalistlabs\u2026 https://t.co/9NRwEb1OEk",
-            "truncated": true,
-            "user": {
-                "contributors_enabled": false,
-                "created_at": "Tue May 21 15:35:39 +0000 2019",
-                "default_profile": false,
-                "default_profile_image": false,
-                "description": "Radicalist opens up a whole new world of opportunities. #Resume Builder and personalized #Job Matches powered by AI.",
-                "favourites_count": 124,
-                "follow_request_sent": null,
-                "followers_count": 302,
-                "following": null,
-                "friends_count": 2032,
-                "geo_enabled": false,
-                "id": 1130859706929491970,
-                "id_str": "1130859706929491970",
-                "is_translator": false,
-                "lang": null,
-                "listed_count": 0,
-                "location": null,
-                "name": "Radicalist Labs",
-                "notifications": null,
-                "profile_background_color": "000000",
-                "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
-                "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
-                "profile_background_tile": false,
-                "profile_banner_url": "https://pbs.twimg.com/profile_banners/1130859706929491970/1558453728",
-                "profile_image_url": "http://pbs.twimg.com/profile_images/1130867598948573184/QV_VuN8u_normal.png",
-                "profile_image_url_https": "https://pbs.twimg.com/profile_images/1130867598948573184/QV_VuN8u_normal.png",
-                "profile_link_color": "FAB81E",
-                "profile_sidebar_border_color": "000000",
-                "profile_sidebar_fill_color": "000000",
-                "profile_text_color": "000000",
-                "profile_use_background_image": false,
-                "protected": false,
-                "screen_name": "RadicalistLabs",
-                "statuses_count": 120,
-                "time_zone": null,
-                "translator_type": "none",
-                "url": "https://radicalist.io/",
-                "utc_offset": null,
-                "verified": false
-            }
-        },
-        "source": "<a href=\"https://launchpass.com/jobseek\" rel=\"nofollow\">Jobseekersv35</a>",
-        "text": "RT @RadicalistLabs: \u201cI am not a product of circumstances. I am a product of my decisions.\u201d ~ Stephen Covey\n\n#Radicalistlabs #Radicalistjob\u2026",
-        "truncated": false,
-        "user": {
-            "contributors_enabled": false,
-            "created_at": "Wed Mar 28 14:42:44 +0000 2018",
-            "default_profile": true,
-            "default_profile_image": false,
-            "description": "If you're looking for a new job, check out the slack channel!",
-            "favourites_count": 5,
-            "follow_request_sent": null,
-            "followers_count": 66,
-            "following": null,
-            "friends_count": 16,
-            "geo_enabled": false,
-            "id": 979005874206330880,
-            "id_str": "979005874206330880",
-            "is_translator": false,
-            "lang": null,
-            "listed_count": 3,
-            "location": "New York, NY",
-            "name": "Job Seek",
-            "notifications": null,
-            "profile_background_color": "F5F8FA",
-            "profile_background_image_url": "",
-            "profile_background_image_url_https": "",
-            "profile_background_tile": false,
-            "profile_image_url": "http://pbs.twimg.com/profile_images/979007311539851264/uteGzVJb_normal.jpg",
-            "profile_image_url_https": "https://pbs.twimg.com/profile_images/979007311539851264/uteGzVJb_normal.jpg",
-            "profile_link_color": "1DA1F2",
-            "profile_sidebar_border_color": "C0DEED",
-            "profile_sidebar_fill_color": "DDEEF6",
-            "profile_text_color": "333333",
-            "profile_use_background_image": true,
-            "protected": false,
-            "screen_name": "jobseekslack",
-            "statuses_count": 3878,
-            "time_zone": null,
-            "translator_type": "none",
-            "url": "https://launchpass.com/jobseek",
             "utc_offset": null,
             "verified": false
         }
@@ -4490,11 +3538,11 @@
             "default_profile": false,
             "default_profile_image": false,
             "description": "Radicalist opens up a whole new world of opportunities. #Resume Builder and personalized #Job Matches powered by AI.",
-            "favourites_count": 124,
+            "favourites_count": 126,
             "follow_request_sent": null,
-            "followers_count": 302,
+            "followers_count": 307,
             "following": null,
-            "friends_count": 2032,
+            "friends_count": 2067,
             "geo_enabled": false,
             "id": 1130859706929491970,
             "id_str": "1130859706929491970",
@@ -4518,317 +3566,7 @@
             "profile_use_background_image": false,
             "protected": false,
             "screen_name": "RadicalistLabs",
-            "statuses_count": 120,
-            "time_zone": null,
-            "translator_type": "none",
-            "url": "https://radicalist.io/",
-            "utc_offset": null,
-            "verified": false
-        }
-    },
-    {
-        "contributors": null,
-        "coordinates": null,
-        "created_at": "Sun Nov 10 07:43:59 +0000 2019",
-        "display_text_range": [
-            0,
-            140
-        ],
-        "entities": {
-            "hashtags": [
-                {
-                    "indices": [
-                        11,
-                        21
-                    ],
-                    "text": "limitless"
-                },
-                {
-                    "indices": [
-                        58,
-                        69
-                    ],
-                    "text": "Radicalist"
-                }
-            ],
-            "symbols": [],
-            "urls": [
-                {
-                    "display_url": "radicalist.io/authorization/\u2026",
-                    "expanded_url": "https://radicalist.io/authorization/sign-up",
-                    "indices": [
-                        92,
-                        115
-                    ],
-                    "url": "https://t.co/VHVUuyzqaG"
-                },
-                {
-                    "display_url": "twitter.com/i/web/status/1\u2026",
-                    "expanded_url": "https://twitter.com/i/web/status/1193434112163377152",
-                    "indices": [
-                        117,
-                        140
-                    ],
-                    "url": "https://t.co/c1jqiXvcOV"
-                }
-            ],
-            "user_mentions": []
-        },
-        "extended_tweet": {
-            "display_text_range": [
-                0,
-                271
-            ],
-            "entities": {
-                "hashtags": [
-                    {
-                        "indices": [
-                            11,
-                            21
-                        ],
-                        "text": "limitless"
-                    },
-                    {
-                        "indices": [
-                            58,
-                            69
-                        ],
-                        "text": "Radicalist"
-                    },
-                    {
-                        "indices": [
-                            117,
-                            128
-                        ],
-                        "text": "Motivation"
-                    },
-                    {
-                        "indices": [
-                            129,
-                            144
-                        ],
-                        "text": "Radicalistlabs"
-                    },
-                    {
-                        "indices": [
-                            145,
-                            159
-                        ],
-                        "text": "Radicalistjob"
-                    },
-                    {
-                        "indices": [
-                            160,
-                            170
-                        ],
-                        "text": "jobsearch"
-                    },
-                    {
-                        "indices": [
-                            171,
-                            186
-                        ],
-                        "text": "smartjobserach"
-                    },
-                    {
-                        "indices": [
-                            187,
-                            206
-                        ],
-                        "text": "professionalresume"
-                    },
-                    {
-                        "indices": [
-                            207,
-                            222
-                        ],
-                        "text": "resumebuilding"
-                    },
-                    {
-                        "indices": [
-                            223,
-                            231
-                        ],
-                        "text": "jobpost"
-                    },
-                    {
-                        "indices": [
-                            232,
-                            242
-                        ],
-                        "text": "latestjob"
-                    },
-                    {
-                        "indices": [
-                            243,
-                            259
-                        ],
-                        "text": "jobapplications"
-                    },
-                    {
-                        "indices": [
-                            260,
-                            271
-                        ],
-                        "text": "quickmatch"
-                    }
-                ],
-                "media": [
-                    {
-                        "display_url": "pic.twitter.com/uxo3dMqAtz",
-                        "expanded_url": "https://twitter.com/RadicalistLabs/status/1193434112163377152/photo/1",
-                        "id": 1193434099127468032,
-                        "id_str": "1193434099127468032",
-                        "indices": [
-                            272,
-                            295
-                        ],
-                        "media_url": "http://pbs.twimg.com/media/EI_t_XVUwAAr_97.jpg",
-                        "media_url_https": "https://pbs.twimg.com/media/EI_t_XVUwAAr_97.jpg",
-                        "sizes": {
-                            "large": {
-                                "h": 670,
-                                "resize": "fit",
-                                "w": 1200
-                            },
-                            "medium": {
-                                "h": 670,
-                                "resize": "fit",
-                                "w": 1200
-                            },
-                            "small": {
-                                "h": 380,
-                                "resize": "fit",
-                                "w": 680
-                            },
-                            "thumb": {
-                                "h": 150,
-                                "resize": "crop",
-                                "w": 150
-                            }
-                        },
-                        "type": "photo",
-                        "url": "https://t.co/uxo3dMqAtz"
-                    }
-                ],
-                "symbols": [],
-                "urls": [
-                    {
-                        "display_url": "radicalist.io/authorization/\u2026",
-                        "expanded_url": "https://radicalist.io/authorization/sign-up",
-                        "indices": [
-                            92,
-                            115
-                        ],
-                        "url": "https://t.co/VHVUuyzqaG"
-                    }
-                ],
-                "user_mentions": []
-            },
-            "extended_entities": {
-                "media": [
-                    {
-                        "display_url": "pic.twitter.com/uxo3dMqAtz",
-                        "expanded_url": "https://twitter.com/RadicalistLabs/status/1193434112163377152/photo/1",
-                        "id": 1193434099127468032,
-                        "id_str": "1193434099127468032",
-                        "indices": [
-                            272,
-                            295
-                        ],
-                        "media_url": "http://pbs.twimg.com/media/EI_t_XVUwAAr_97.jpg",
-                        "media_url_https": "https://pbs.twimg.com/media/EI_t_XVUwAAr_97.jpg",
-                        "sizes": {
-                            "large": {
-                                "h": 670,
-                                "resize": "fit",
-                                "w": 1200
-                            },
-                            "medium": {
-                                "h": 670,
-                                "resize": "fit",
-                                "w": 1200
-                            },
-                            "small": {
-                                "h": 380,
-                                "resize": "fit",
-                                "w": 680
-                            },
-                            "thumb": {
-                                "h": 150,
-                                "resize": "crop",
-                                "w": 150
-                            }
-                        },
-                        "type": "photo",
-                        "url": "https://t.co/uxo3dMqAtz"
-                    }
-                ]
-            },
-            "full_text": "Ability is #limitless. Do more, be more!\n\nRegister Now On #Radicalist for smart job search:\nhttps://t.co/VHVUuyzqaG\n\n#Motivation #Radicalistlabs #Radicalistjob #jobsearch #smartjobserach #professionalresume #resumebuilding #jobpost #latestjob #jobapplications #quickmatch https://t.co/uxo3dMqAtz"
-        },
-        "favorite_count": 2,
-        "favorited": false,
-        "filter_level": "low",
-        "geo": null,
-        "id": 1193434112163377152,
-        "id_str": "1193434112163377152",
-        "in_reply_to_screen_name": null,
-        "in_reply_to_status_id": null,
-        "in_reply_to_status_id_str": null,
-        "in_reply_to_user_id": null,
-        "in_reply_to_user_id_str": null,
-        "is_quote_status": false,
-        "lang": "en",
-        "matching_rules": [
-            {
-                "tag": null
-            }
-        ],
-        "place": null,
-        "possibly_sensitive": false,
-        "quote_count": 0,
-        "reply_count": 0,
-        "retweet_count": 0,
-        "retweeted": false,
-        "source": "<a href=\"https://mobile.twitter.com\" rel=\"nofollow\">Twitter Web App</a>",
-        "text": "Ability is #limitless. Do more, be more!\n\nRegister Now On #Radicalist for smart job search:\nhttps://t.co/VHVUuyzqaG\u2026 https://t.co/c1jqiXvcOV",
-        "truncated": true,
-        "user": {
-            "contributors_enabled": false,
-            "created_at": "Tue May 21 15:35:39 +0000 2019",
-            "default_profile": false,
-            "default_profile_image": false,
-            "description": "Radicalist opens up a whole new world of opportunities. #Resume Builder and personalized #Job Matches powered by AI.",
-            "favourites_count": 124,
-            "follow_request_sent": null,
-            "followers_count": 302,
-            "following": null,
-            "friends_count": 2032,
-            "geo_enabled": false,
-            "id": 1130859706929491970,
-            "id_str": "1130859706929491970",
-            "is_translator": false,
-            "lang": null,
-            "listed_count": 0,
-            "location": null,
-            "name": "Radicalist Labs",
-            "notifications": null,
-            "profile_background_color": "000000",
-            "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
-            "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
-            "profile_background_tile": false,
-            "profile_banner_url": "https://pbs.twimg.com/profile_banners/1130859706929491970/1558453728",
-            "profile_image_url": "http://pbs.twimg.com/profile_images/1130867598948573184/QV_VuN8u_normal.png",
-            "profile_image_url_https": "https://pbs.twimg.com/profile_images/1130867598948573184/QV_VuN8u_normal.png",
-            "profile_link_color": "FAB81E",
-            "profile_sidebar_border_color": "000000",
-            "profile_sidebar_fill_color": "000000",
-            "profile_text_color": "000000",
-            "profile_use_background_image": false,
-            "protected": false,
-            "screen_name": "RadicalistLabs",
-            "statuses_count": 120,
+            "statuses_count": 122,
             "time_zone": null,
             "translator_type": "none",
             "url": "https://radicalist.io/",

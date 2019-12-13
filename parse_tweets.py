@@ -1,7 +1,7 @@
 import json
 import csv
 
-with open('./data/tweets_terrorist.json', 'r') as myfile:
+with open('./tweets_terrorist.json', 'r') as myfile:
     data=myfile.read()
 
 tweets = json.loads(data)
