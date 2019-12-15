@@ -19,6 +19,11 @@ with open('tweets_terrorist.csv', 'w+',encoding = 'utf-8', newline='') as csv_tw
             print(text)
         else:
             text = tweet['text']
+        if(tweet["truncated"]):
+            text = tweet['extended_tweet']['full_text']
+            print(text)
+        else:
+            text = tweet['text']
             print(text)
         twitter_writer.writerow({'id':tweet['id_str'], 'user':tweet['user']['screen_name'], 'created at':tweet['created_at'], 'tweet':text, 'label':'0'})
         
