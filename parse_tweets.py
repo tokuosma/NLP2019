@@ -7,10 +7,6 @@ with open('./tweets_terrorist.json', 'r') as myfile:
 tweets = json.loads(data)
 # print len(tweets)
 
-
-
-
-
 with open('tweets_terrorist.csv', 'w+',encoding = 'utf-8', newline='') as csv_tweets:
     twitter_writer = csv.DictWriter(csv_tweets, delimiter = ';', fieldnames=['id','user','created at','tweet','label'])
     for tweet in tweets:
