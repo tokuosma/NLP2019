@@ -12,7 +12,7 @@ parser.add_argument("source_file", type=str,
                     help='Source file for labeled tweets (json)')
 
 parser.add_argument('output_file', type=str, nargs='?',
-                    help='Output file. Note! If output file exists, any previously labeled tweets will be ignored.',
+                    help='(optional) Output file (csv). Default value = "emoticon_counts.csv"',
                     default='emoticon_counts.csv')
             
 args = parser.parse_args()
