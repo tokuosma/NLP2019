@@ -1,6 +1,6 @@
 import json
 import argparse
-import re
+from util import clean_tweet_text
 from textblob import TextBlob
 from statistics import mean
 from statistics import stdev
@@ -36,8 +36,7 @@ for source_file in source_files:
             text = tweet['extended_tweet']['full_text']
         else:
             text = tweet['text']
-        text = re.sub(r'https?:\/\/.*[a-zA-Z0-9.\/_%…]*', '', text, flags=re.MULTILINE)
-        text = re.sub(r'@[a-zA-Z0-9.\/_%…]*', '', text, flags=re.MULTILINE)
+        text = clean_tweet_text(text)
         testimonial = TextBlob(text)
         current_date = datetime.strptime(tweet['created_at'], "%a %b %d %X %z %Y").date()
         sentiments.append(testimonial.sentiment.polarity)
