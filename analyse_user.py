@@ -84,4 +84,5 @@ def analyse_users(users_source_files):
         return source_file, mean_sentiment_perc, vol_neg_posts, vol_very_neg_posts, time_active.days, radicalization_score, very_neg_tweets_and_sentiments, sentiments
 
 source_files = ['Data\\tweets_user_ViidarUkonpoika.json', 'Data\\tweets_user_UKInfidel.json', 'Data\\tweets_user_DrDavidDuke.json']#, 'Data\\tweets_extremist.json', 'Data\\tweets_bombing.json', 'Data\\tweets_islamophobia.json', 'Data\\tweets_radicalist.json']
-analyse_users(source_files)
+thing = analyse_users(source_files)
+print(thing)
