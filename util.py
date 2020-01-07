@@ -57,6 +57,8 @@ def print_hashtag_summary(hashtag, tweets):
     print('Newest tweet date: ' + str(max(tweet_dates)))
     print('\n')    
 
+
+
 if __name__ == "__main__":
     pass
 

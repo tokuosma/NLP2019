@@ -3,7 +3,8 @@ import os
 import csv
 import argparse
 import emojis 
-import re 
+import re
+import util 
 
 CATEGORY_HATE = "hate_speech"
 CATEGORY_NON_HATE = "non_hate_speech"
@@ -11,30 +12,33 @@ CATEGORY_NON_HATE = "non_hate_speech"
 
 def count_tweet_emoticons(tweets):
     results = { CATEGORY_HATE : {}, CATEGORY_NON_HATE : {}}
-
+    hate_total = non_hate_total = 0
     for tweet in tweets:
-        text = ""
-        if(tweet["truncated"]):
-            text = tweet['extended_tweet']['full_text']
-        else:
-            text = tweet['text']
+        text = util.get_tweet_text(tweet)
         text_emojis = emojis.get(text)
+        if len(text_emojis) == 0:
+            # skip tweet if no emojis present
+            continue
+        category = ""
+        if(tweet["hate_speech"]):
+            category = CATEGORY_HATE
+            hate_total += 1
+        else:
+            category = CATEGORY_NON_HATE
+            non_hate_total += 1            
         for emoji in text_emojis:
             emoji_key = emojis.decode(emoji)
-            if tweet['hate_speech'] == True:
-                if emoji_key not in results[CATEGORY_HATE]:
-                    results[CATEGORY_HATE][emoji_key] = 1
-                else:
-                    results[CATEGORY_HATE][emoji_key] += 1                    
+            if emoji_key not in results[category]:
+                results[category][emoji_key] = 1
             else:
-                if emoji_key not in results[CATEGORY_NON_HATE]:
-                    results[CATEGORY_NON_HATE][emoji_key] = 1
-                else:
-                    results[CATEGORY_NON_HATE][emoji_key] += 1                    
-            
-        
+                results[category][emoji_key] += 1
+                
+    # Order by    
     results[CATEGORY_HATE] = sorted(results[CATEGORY_HATE].items(), key = lambda kv : ( kv[1], kv[0]), reverse=True)
     results[CATEGORY_NON_HATE] = sorted(results[CATEGORY_NON_HATE].items(), key = lambda kv : ( kv[1], kv[0]), reverse=True)
+
+    results['hate_total'] = hate_total
+    results['non_hate_total'] = non_hate_total
     
     return results
 

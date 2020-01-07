@@ -51,11 +51,9 @@ Abstract
 \begin{IEEEkeywords}
 natural language processing, sentiment analysis, hate speech
 \end{IEEEkeywords}
-
 \section{Introduction}
 The Cambridge dictionary defines hate speech as:
 \vspace{12pt}
-
 \emph{``public speech that expresses hate or encourages violence towards a person or group based on something
 such as race, religion, sex, or sexual orientation''} \cite{Cambridge:hate_speech}
 \vspace{12pt}
@@ -63,28 +61,31 @@ such as race, religion, sex, or sexual orientation''} \cite{Cambridge:hate_speec
 In practice, defining clear boundaries between hate speech and normal expression can be
 hard. Legal definitions of hate speech vary by country with some countries setting much
 stricter definitions of hate speech. \cite{Wikipedia:hate_speech_laws}
-\\
+
 It could be argued that today, the largest platforms for public speech are provided by 
 the social media companies, such as Facebook or Twitter. Both these companies forbid 
 hate speech on their platforms \cite{Twitter:hate_speech,Facebook:hate_speech} but the sheer volume 
 of posted content makes it hard to enforce these rules. The services rely on users reporting
 hateful content when it is found on the platform. Facebook has also utilized machine learning
 algorithms in detecting hate speech but the results have not been optimal. \cite{Time:facebook_hate_speech_languages}
-\\
+
 Hate speech can be spread by individuals or extremist groups seeking to advance their 
 agendas. Hate speech is usually directed at minorities with the aim of demonizing and 
 dehumanizing the targeted group. The effects of hate speech can be severe. For example, the 
 UN fact finding mission sent to Myanmar, after the government crackdown on the Rohingya 
 minority, found that hate speech spread on Facebook contributed significantly to sparking 
 tensions in the region\cite{Reuters:myanmar_rohingya}.
-\\
-The goal of our project is to find efficient methods for identifying hate speech on twitter.
-We aim to find a set of features that could be used to identify hate speech content. 
+
+The goal of our project is to find efficient methods for identifying hate speech in online forums.
+Specifically, we will target the Twitter platform. We will use the Twitter search API to retrieve and then 
+manually label a hate speech data set. By examining this data set, we aim to find a potential set of features 
+that could be used to identify hate speech content.  We will also profile individual posters who actively spread 
+hate speech on Twitter.
 
 \section{Problem description}
 Our investigation consists of two parts. In the first part we will collect a tweet data set by searching 
 for tweets with specific hashtags. This data set will be manually labeled as either hate or 
-non hate speech. We will then characterize the tweets in both categories using following features:
+non-hate speech. We will then characterize the tweets in both categories using following features:
 
 \begin{itemize}
     \item Sentiment analysis
@@ -111,8 +112,10 @@ that were likely targets for hate speech. The hashtags were the following:
 
 The tweets were collected using the Twitter premium search API with 30 day history. Retweets 
 and tweets not written in English were excluded from the search. Our goal was to retrieve at least 
-200 tweets per hashtag but we set the upper limit at 500. After the tweets were retrieved  
-through the API they were labeled manually. A summary of the labeled data set is shown in table 
+200 tweets per hashtag but we set the upper limit at 500. The tweets were saved as JSON files. 
+After the tweets were retrieved through the API, they were labeled manually. The labels were appended  
+to the original JSON schema so that all information could be preserved. 
+A summary of the labeled data set is shown in table 
 \ref{tab:data_set_1_summary}.
 
 \begin{table}[!ht]
@@ -124,7 +127,7 @@ through the API they were labeled manually. A summary of the labeled data set is
       \begin{tabular}{l c c c}
         \hline
         &\multicolumn{3}{c}{\textbf{Number of tweets}} \\
-        \textbf{\textit{Hashtag}}& \textbf{\textit{Non hate speech}}& \textbf{\textit{Hate speech}} & \textbf{\textit{Total}}  \\
+        \textbf{\textit{Hashtag}}& \textbf{\textit{Non-hate speech}}& \textbf{\textit{Hate speech}} & \textbf{\textit{Total}}  \\
         \cline{2-4} 
         \hline
         \#bombing & 195 & 2 & 197\\
@@ -140,14 +143,14 @@ through the API they were labeled manually. A summary of the labeled data set is
   \end{table}
 
 As can be seen from the table, some topics yielded very few tweets we would label as hate speech 
-while some of the hashtags, especially \#radicalist, were rarely used at all. We found the largest
+while some of the hashtags, especially \#radicalist, were barely used at all. We found the largest
 proportion of hate speech with the terrorist hashtag (Fig \ref{fig:data_set_1_summary}). The final 
 data set contained a total of 1205 tweets out of which 137 were labeled as hate speech. 
 
 \begin{figure}[htbp]
 \centering
 \centerline{\includegraphics[width=2.5in]{data_set_1_summary.png}}
-\caption{Hate/Non hate tweets per each hashtag.}
+\caption{Hate/non-hate tweets per each hashtag.}
 \label{fig:data_set_1_summary}
 \end{figure}
 
@@ -167,10 +170,149 @@ radicalization analysis.
 TODO
 \subsection{LIWC features}
 To identify common themes and topics in the labeled tweet data set, we 
-used Empath, which is an open source alternative to proprietary LIWC software. \cite{fast2016empath}
+used Empath, which is an open-source alternative to proprietary LIWC software  \cite{fast2016empath}. 
+The library offers tools that can extract themes and topics from a given text.
+The library comes with a default set of categories but new categories can be added by the users. 
+Our analysis uses the default categories.
 
+Before the analysis, we removed the URLs and user names from the tweets. After cleaning, we analyzed each tweet text individually using Empath and counted the frequency of extracted topics in both the hate and non-hate categories. 
+These raw counts were then normalized by dividing them with the number of tweets in the category. The normalized 
+scores for the twenty most common topics are presented in tables \ref{tab:liwc_features_non_hate} 
+and \ref{tab:liwc_features_hate}. Bar plots of the most common topics can also be found in the appendix.
+
+\begin{table}[!ht]
+    % Add some padding to the table cells:
+    \def\arraystretch{1.2}%
+    \begin{center}
+      \caption{Top 20 most common topics in non-hate tweets}
+      \label{tab:liwc_features_non_hate}
+      \begin{tabular}{l c | c c}
+        \hline\hline
+        % \multicolumn{2}{c}{\textbf{non-hate speech}} 
+        \multicolumn{4}{c}{\textbf{Non-hate speech}}\\
+        \hline
+        \textbf{Topic}&\textbf{Score}&\textbf{Topic}&\textbf{Score}\\
+        \hline
+        negative\_emotion&0.1713&terrorism&0.0927\\
+        war&0.1573&weapon&0.089\\
+        fight&0.1311&positive\_emotion&0.0871\\
+        speaking&0.1301&violence&0.0758\\
+        crime&0.1264&power&0.074\\
+        communication&0.1124&business&0.0712\\
+        government&0.1105&giving&0.0693\\
+        aggression&0.1105&hate&0.0684\\
+        kill&0.1067&law&0.0665\\
+        politics&0.0946&leader&0.0655\\
+        \hline\hline
+      \end{tabular}  
+    \end{center}
+  \end{table}
+
+  \begin{table}[!ht]
+    % Add some padding to the table cells:
+    \def\arraystretch{1.2}%
+    \begin{center}
+      \caption{Top 20 most common topics in hate speech tweets}
+      \label{tab:liwc_features_hate}
+      \begin{tabular}{l c | c c}
+        \hline\hline
+        % \multicolumn{2}{c}{\textbf{non-hate speech}} 
+        \multicolumn{4}{c}{\textbf{Hate speech}}\\
+        \hline
+        \textbf{Topic}&\textbf{Score}&\textbf{Topic}&\textbf{Score}\\
+        \hline
+        negative\_emotion&0.2847&crime&0.1168\\
+        hate&0.2701&appearance&0.1168\\
+        children&0.219&speaking&0.1095\\
+        family&0.2117&fight&0.1095\\
+        love&0.2044&government&0.1022\\
+        youth&0.1898&giving&0.0949\\
+        emotional&0.1752&disgust&0.0949\\
+        affection&0.1752&communication&0.0949\\
+        kill&0.1679&terrorism&0.0876\\
+        war&0.1168&leader&0.0876\\
+        \hline\hline
+      \end{tabular}  
+    \end{center}
+  \end{table}
 \subsection{Emoticon usage}
-TODO
+We investigated the usage of emoticons in hate and non-hate tweets by examining the types 
+of emoticons used and their frequency.  Using Emojis Python library \cite{python:emojis}, we 
+listed all the distinct emoticons in every tweet. The hate speech tweets contained a total of 22 tweets which contained emoticons
+while the  non-hate tweets contained 154. The percentage of tweets containing emojis was 
+roughly the same in the two categories, 16 \% and 14 \% in hate and non-hate categories respectively.
+
+The most frequent emoticons are listed in tables \ref{tab:emoticons_non_hate} and \ref{tab:emoticons_hate}. 
+Bar plots of the most common emoticons can also be found in the appendix.
+
+
+\begin{table}[!ht]
+    % Add some padding to the table cells:
+    \def\arraystretch{1.2}%
+    \begin{center}
+      \caption{Top 20 most common emoticons in non-hate speech tweets}
+      \label{tab:emoticons_non_hate}
+      \begin{tabular}{l c | c c}
+        \hline\hline
+        % \multicolumn{2}{c}{\textbf{non-hate speech}} 
+        \multicolumn{4}{c}{\textbf{Non-hate speech}}\\
+        \hline
+        \textbf{Emoticon}&\textbf{Frequency [\%]}&\textbf{Emoticon}&\textbf{Frequency [\%]}\\
+        \hline
+        :end: & 5.43\% & :pout: & 0.47\%\\
+        :bell: & 5.43\% & :muscle: & 0.47\%\\
+        :point\_right: & 2.81\% & :heavy\_minus\_sign: & 0.37\%\\
+        :joy: & 1.03\% & :calling: & 0.37\%\\
+        :point\_down: & 0.66\% & :warning: & 0.28\%\\
+        :wink: & 0.56\% & \emph{:sotwe:*} & 0.28\%\\
+        :fire: & 0.56\% & :smirk: & 0.28\%\\
+        :us: & 0.47\% & :wave: & 0.19\%\\
+        :uk: & 0.47\% & :thumbsup: & 0.19\%\\
+        :rofl: & 0.47\% & :smile: & 0.19\%\\                           
+        \hline
+        \multicolumn{4}{l}{\emph{*:stuck\_out\_tongue\_winking\_eye:}}\\
+        \hline\hline
+      \end{tabular}  
+    \end{center}
+  \end{table}
+
+\begin{table}[!ht]
+    % Add some padding to the table cells:
+    \def\arraystretch{1.2}%
+    \begin{center}
+      \caption{Top 20 most common emoticons in hate speech tweets}
+      \label{tab:emoticons_hate}
+      \begin{tabular}{l c | c c}
+        \hline\hline
+        % \multicolumn{2}{c}{\textbf{non-hate speech}} 
+        \multicolumn{4}{c}{\textbf{Hate speech}}\\
+        \hline
+        \textbf{Emoticon}&\textbf{Frequency [\%]}&\textbf{Emoticon}&\textbf{Frequency [\%]}\\
+        \hline
+        :joy: & 5.11\% & :stop\_sign: & 0.73\%\\
+        :pout: & 4.38\% & :star\_of\_david: & 0.73\%\\
+        :uk: & 1.46\% & :sparkler: & 0.73\%\\
+        :thumbsup: & 1.46\% & :snake: & 0.73\%\\
+        :smirk: & 1.46\% & :skull\_and\_crossbones: & 0.73\%\\
+        :roll\_eyes: & 1.46\% & :skull: & 0.73\%\\
+        :muscle: & 1.46\% & :point\_up\_2: & 0.73\%\\
+        :clap: & 1.46\% & :point\_down: & 0.73\%\\
+        :blush: & 1.46\% & :pensive: & 0.73\%\\
+        :v: & 0.73\% & :menorah: & 0.73\%\\                        
+        \hline\hline
+      \end{tabular}  
+    \end{center}
+\end{table}
+
+The most common emoticons used in the hate speech, :joy: and :pout:, don't really stand out 
+and are frequently used in non hate context, although both seem to be more common in our 
+hate speech data set. Other emoticons in the hate speech tweets were occured only once or twice.
+
+The two most common emoticons in the non hate speech data set were :exit: and :bell:. 
+It turns out both emoticons were frequently used by opponents of Jeremy Corbyn, who 
+were active during the British general election that occurred in December 2019, at 
+the same time we were collection our data sets.
+
 \subsection{Named entities}
 TODO
 \subsection{Named phrases}
@@ -179,7 +321,23 @@ TODO
 TODO
 
 \section{Results}
-TODO
+Considering the hashtags that were used to collect the tweets, 
+it is not surprising that Empath found negative and violent topics present 
+in both hate and non-hate categories. Still, there is a marked difference in 
+the scores between the two categories. The topics in the non-hate speech category 
+are more evenly distributed which is to be expected due to the difference in sample size.
+Even taking this into account, the topic 'hate' is still much more pronounced in the hate speech 
+data set.  Surprisingly, themes like 'children', 'family', 'love', and 'youth' are also some of the 
+most common topics in the hate speech category. The difference between the two categories suggest 
+that Empath topics might be useful for identifying hate speech content.
+
+The most common emoticons found in the hate speech tweets are widely used and cannot be considered hateful 
+without further context. Based on our data, emoticons with more specialized meanings are rarely used and 
+seem poor candidates for indicators. 
+Many of the hate tweets containing the emoticon :joy: were malicious and mocking. 
+Detecting the misalignment between the nominal meaning of an emoticon and the actual tone of the message could 
+potentially be an efficient indicator of hateful content.
+
 \section{Conclusions}
 
 
@@ -366,4 +524,26 @@ TODO
 \bibliography{IEEEabrv,project_15}
 \vspace{12pt}
 
+\appendix
+
+\begin{itemize}
+
+    \item Figure : Emoticon usage in the hate speech and non-hate speech tweets 
+    \item Figure : Emoticon usage in the hate speech and non-hate speech tweets 
+\end{itemize}
+
+\begin{figure*}[!t] 
+\centering 
+\includegraphics[width=5.0in]{liwc_topics} \label{fig:liwc_topics} \hfil 
+\caption{Empath categories in the hate speech and non-hate speech tweets.}     
+\end{figure*} 
+
+\begin{figure*}[!t] 
+    \centering 
+    \includegraphics[width=5.0in]{emoticons} \label{fig:emoticon_usage} \hfil 
+    \caption{Emoticon usage in the hate speech and non-hate speech tweets.}     
+\end{figure*} 
+
 \end{document}
+    
+    
