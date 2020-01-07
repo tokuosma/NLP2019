@@ -1,6 +1,6 @@
 import json
 import argparse
-from util import clean_tweet_text
+import re
 from textblob import TextBlob
 from statistics import mean
 from statistics import stdev
@@ -8,20 +8,17 @@ from datetime import MAXYEAR
 from datetime import MINYEAR
 from datetime import datetime
 from datetime import date
-import pandas as pd
+# import pandas as pd
 
-"""
-TODO:
-- entiment_stdev kaikista sentimenteista
-- urlit ja käyttäjänimet pois
 
-"""
-
-source_files = ['Data\\tweets_user_ViidarUkonpoika.json', 'Data\\tweets_user_UKInfidel.json', 'Data\\tweets_user_DrDavidDuke.json']
-
-for source_file in source_files:
-    
+def analyse_users(source_file):
+    """
+    users_source_files is a list of the json files that contain the user's data in strings
+    """
+        
+    tweets_and_sentiments = []
     sentiments = []
+    very_neg_tweets_and_sentiments = []
     no_neg_posts = 0
     no_very_neg_posts = 0
     highest_date = date(MINYEAR, 1, 1)
@@ -36,10 +33,12 @@ for source_file in source_files:
             text = tweet['extended_tweet']['full_text']
         else:
             text = tweet['text']
-        text = clean_tweet_text(text)
+        text = re.sub(r'https?:\/\/.*[a-zA-Z0-9.\/_%…]*', '', text, flags=re.MULTILINE)
+        text = re.sub(r'@[a-zA-Z0-9.\/_%…]*', '', text, flags=re.MULTILINE)
         testimonial = TextBlob(text)
         current_date = datetime.strptime(tweet['created_at'], "%a %b %d %X %z %Y").date()
-        sentiments.append(testimonial.sentiment.polarity)
+        tweets_and_sentiments.append((text, testimonial.sentiment.polarity))
+        sentiments .append(testimonial.sentiment.polarity)
         # print(text+'   '+str(testimonial.sentiment))
         if testimonial.sentiment.polarity < 0:
             no_neg_posts += 1
@@ -48,28 +47,37 @@ for source_file in source_files:
             if current_date > highest_date:
                 highest_date = current_date
 
-    sentiment_stdev = stdev(sentiments)
-    # print(sentiment_stdev)
+    sentiment_mean = mean(sentiments)
+    sentiment_stdev =stdev(sentiments)
 
-
-    for sentiment in sentiments:
-        if sentiment < -3*sentiment_stdev: # if a negative sentiment is further than 3 standard deviations away from the mean, the post related to it is "very negative"
+    for tweet,sentiment in tweets_and_sentiments:
+        standardized_value = (sentiment-sentiment_mean)/sentiment_stdev
+        if standardized_value < -3: # if a negative sentiments standard value is less than -3, the post related to it is "very negative"
+            very_neg_tweets_and_sentiments.append((tweet, sentiment))
             no_very_neg_posts += 1
         
     time_active = highest_date - lowest_date
-    mean_sentiment_perc = (mean(sentiments) + 1)* (1/2) # sentiment is between [-1,1]. [-1,1] -> [0,1]
+    mean_sentiment_perc = (sentiment_mean + 1)* (1/2) # sentiment is between [-1,1]. [-1,1] -> [0,1]
     vol_neg_posts = no_neg_posts/len(tweets)
     vol_very_neg_posts = no_very_neg_posts/len(tweets)
+    radicalization_score = (7/mean_sentiment_perc**3)*vol_neg_posts*vol_very_neg_posts*float(time_active.days)
 
-    # print(sentiments)
-    df = pd.DataFrame(sentiments, columns = ['sentiment'])
-    df.hist(bins=50)
-    print('file: '+source_file)
-    print('mean sentiment percentile: ' + str(mean_sentiment_perc))
-    print('number of negative posts: ' + str(no_neg_posts))
-    print('volume of negative posts: ' + str(vol_neg_posts))
-    print('number of very negative posts:' + str(no_very_neg_posts))
-    print('volume of very negative posts:' + str(vol_very_neg_posts))
-    print('number of days active: '+ str(time_active.days))
-    print('radicalization score: '+ str((7/mean_sentiment_perc**3)*vol_neg_posts*vol_very_neg_posts*float(time_active.days)))
-    print('\n\n\n')
+    statistics_dict = {
+    "source_file" : source_file,
+    "mean_sentiment_perc" : mean_sentiment_perc,
+    "vol_neg_posts" : vol_neg_posts,
+    "vol_very_neg_posts" : vol_very_neg_posts,
+    "days_active" : time_active.days,
+    "radicalization_score" : radicalization_score,
+    "very_neg_tweets_and_sentiments" : very_neg_tweets_and_sentiments,
+    "sentiments" : sentiments
+    }
+    return statistics_dict
+if __name__ == "__main__":
+    source_files = ['Data\\tweets_user_ViidarUkonpoika.json', 'Data\\tweets_user_UKInfidel.json', 'Data\\tweets_user_DrDavidDuke.json']#, 'Data\\tweets_extremist.json', 'Data\\tweets_bombing.json', 'Data\\tweets_islamophobia.json', 'Data\\tweets_radicalist.json']
+    first_user = analyse_users('Data\\tweets_user_ViidarUkonpoika.json')
+    second_user = analyse_users('Data\\tweets_user_UKInfidel.json')
+    third_user = analyse_users('Data\\tweets_user_DrDavidDuke.json')
+    
+
+    print(first_user['source_file'])

@@ -2,8 +2,8 @@ from empath import Empath
 from util import read_tweets, get_tweet_text, clean_tweet_text
 import argparse
 
-CATEGORY_HATE = "hate_speech_topics"
-CATEGORY_NON_HATE = "non_hate_speech_topics"
+CATEGORY_HATE = "hate_speech"
+CATEGORY_NON_HATE = "non_hate_speech"
 
 
 
