@@ -113,7 +113,7 @@ The tweets were collected using the Twitter premium search API with 30 day histo
 and tweets not written in English were excluded from the search. Our goal was to retrieve at least 
 200 tweets per hashtag but we set the upper limit at 500. After the tweets were retrieved  
 through the API they were labeled manually. A summary of the labeled data set is shown in table 
-\ref{tab:data_set_1_summary} and figure \ref{fig:data_set_1_summary}.
+\ref{tab:data_set_1_summary}.
 
 \begin{table}[!ht]
     % Add some padding to the table cells:
@@ -121,7 +121,7 @@ through the API they were labeled manually. A summary of the labeled data set is
     \begin{center}
       \caption{Data set 1 summary}
       \label{tab:data_set_1_summary}
-      \begin{tabular}{l l c c}
+      \begin{tabular}{l c c c}
         \hline
         &\multicolumn{3}{c}{\textbf{Number of tweets}} \\
         \textbf{\textit{Hashtag}}& \textbf{\textit{Non hate speech}}& \textbf{\textit{Hate speech}} & \textbf{\textit{Total}}  \\
@@ -140,7 +140,8 @@ through the API they were labeled manually. A summary of the labeled data set is
   \end{table}
 
 As can be seen from the table, some topics yielded very few tweets we would label as hate speech 
-while some of the hashtags, especially \#radicalist, were rarely used at all. The final 
+while some of the hashtags, especially \#radicalist, were rarely used at all. We found the largest
+proportion of hate speech with the terrorist hashtag (Fig \ref{fig:data_set_1_summary}). The final 
 data set contained a total of 1205 tweets out of which 137 were labeled as hate speech. 
 
 \begin{figure}[htbp]
