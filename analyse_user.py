@@ -8,7 +8,7 @@ from datetime import MAXYEAR
 from datetime import MINYEAR
 from datetime import datetime
 from datetime import date
-import pandas as pd
+# import pandas as pd
 
 
 def analyse_users(source_file):
@@ -49,14 +49,10 @@ def analyse_users(source_file):
 
     sentiment_mean = mean(sentiments)
     sentiment_stdev =stdev(sentiments)
-    # print(sentiment_mean, sentiment_stdev)
-
-    # print(sentiment_stdev)
 
     for tweet,sentiment in tweets_and_sentiments:
         standardized_value = (sentiment-sentiment_mean)/sentiment_stdev
-        # print(standardized_value)
-        if standardized_value < -3: # if a negative sentiment is further than 3 standard deviations away from the mean, the post related to it is "very negative"
+        if standardized_value < -3: # if a negative sentiments standard value is less than -3, the post related to it is "very negative"
             very_neg_tweets_and_sentiments.append((tweet, sentiment))
             no_very_neg_posts += 1
         
@@ -66,28 +62,14 @@ def analyse_users(source_file):
     vol_very_neg_posts = no_very_neg_posts/len(tweets)
     radicalization_score = (7/mean_sentiment_perc**3)*vol_neg_posts*vol_very_neg_posts*float(time_active.days)
 
-    # print(sentiments)
-    # df = pd.DataFrame(sentiments, columns = ['sentiment'])
-    # df.hist(bins=50)
-    # print('file: ' + source_file)
-    # print('mean sentiment percentile: ' + str(mean_sentiment_perc))
-    # print('number of negative posts: ' + str(no_neg_posts))
-    # print('volume of negative posts: ' + str(vol_neg_posts))
-    # print('number of very negative posts:' + str(no_very_neg_posts))
-    # print('volume of very negative posts:' + str(vol_very_neg_posts))
-    # print('number of days active: '+ str(time_active.days))
-    # print('radicalization score: '+ str(radicalization_score))
-    # print('very negative post and their sentiments:')
-    # [print(str(item[0]),item[1]) for item in very_neg_tweets_and_sentiments]
-    # print('\n\n\n')
     statistics_dict = {
     "source_file" : source_file,
     "mean_sentiment_perc" : mean_sentiment_perc,
-    "vol_neg_post" : vol_neg_posts,
+    "vol_neg_posts" : vol_neg_posts,
     "vol_very_neg_posts" : vol_very_neg_posts,
     "days_active" : time_active.days,
     "radicalization_score" : radicalization_score,
-    "very_neg_tweets_and_sentimens" : very_neg_tweets_and_sentiments,
+    "very_neg_tweets_and_sentiments" : very_neg_tweets_and_sentiments,
     "sentiments" : sentiments
     }
     return statistics_dict
