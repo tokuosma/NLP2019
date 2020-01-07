@@ -113,7 +113,7 @@ The tweets were collected using the Twitter premium search API with 30 day histo
 and tweets not written in English were excluded from the search. Our goal was to retrieve at least 
 200 tweets per hashtag but we set the upper limit at 500. After the tweets were retrieved  
 through the API they were labeled manually. A summary of the labeled data set is shown in table 
-\ref{tab:data_set_1_summary}
+\ref{tab:data_set_1_summary} and figure \ref{fig:data_set_1_summary}.
 
 \begin{table}[!ht]
     % Add some padding to the table cells:
@@ -141,7 +141,14 @@ through the API they were labeled manually. A summary of the labeled data set is
 
 As can be seen from the table, some topics yielded very few tweets we would label as hate speech 
 while some of the hashtags, especially \#radicalist, were rarely used at all. The final 
-data set contained a total of 1205 tweets out of which 137 were labeled as hate speech.
+data set contained a total of 1205 tweets out of which 137 were labeled as hate speech. 
+
+\begin{figure}[htbp]
+\centering
+\centerline{\includegraphics[width=2.5in]{data_set_1_summary.png}}
+\caption{Hate/Non hate tweets per each hashtag.}
+\label{fig:data_set_1_summary}
+\end{figure}
 
 \subsection{Data set 2: Active hate speakers}
 For the second data set, we looked for active twitter users who frequently posted hate speech content. 
@@ -169,8 +176,6 @@ TODO
 TODO
 \section{Radicalization of of active hate speakers}
 TODO
-
-
 
 \section{Results}
 TODO
