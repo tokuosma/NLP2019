@@ -7,8 +7,8 @@ nlp = spacy.load("en_core_web_sm")
 
 def get_named_phrases(tweets):
     results = {
-        CATEGORY_HATE : [],
-        CATEGORY_NON_HATE : []
+        CATEGORY_HATE : {},
+        CATEGORY_NON_HATE : {}
     }
 
     num_hate, num_non_hate = 0,0
@@ -27,9 +27,9 @@ def get_named_phrases(tweets):
         for ent in doc.ents:
             if ent.text in results[category]:
                 #Add way to increase the counter
-                pass
+                results[category][ent.text] += 1
             else:
-                results[category].append(ent.text)
+                results[category][ent.text] = 1
 
     return results
 
