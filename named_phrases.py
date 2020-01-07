@@ -5,7 +5,7 @@ CATEGORY_HATE = "hate_speech_topics"
 CATEGORY_NON_HATE = "non_hate_speech_topics"
 nlp = spacy.load("en_core_web_sm")
 
-def get_named_phrases(tweets):
+def get_named_entities(tweets):
     results = {
         CATEGORY_HATE : {},
         CATEGORY_NON_HATE : {}
@@ -31,6 +31,12 @@ def get_named_phrases(tweets):
             else:
                 results[category][ent.text] = 1
 
+    results[CATEGORY_HATE] = sorted(results[CATEGORY_HATE].items(), key= lambda kv : (kv[1], kv[0]), reverse=True)
+    results[CATEGORY_NON_HATE] = sorted(results[CATEGORY_NON_HATE].items(), key= lambda kv : (kv[1], kv[0]), reverse=True)
+
+    results[CATEGORY_HATE] = [(x, y / num_hate) for x,y in results[CATEGORY_HATE]]
+    results[CATEGORY_NON_HATE] = [(x, y / num_non_hate) for x,y in results[CATEGORY_NON_HATE]]
+
     return results
 
 if __name__ == "__main__":
@@ -38,6 +44,12 @@ if __name__ == "__main__":
     f = []
     f.append(input("Give file: "))
     tweets = read_tweets(f)
-    results = get_named_phrases(tweets)
-    print(results.get(CATEGORY_HATE))
-    print(results.get(CATEGORY_NON_HATE))
+    results = get_named_entities(tweets)
+    
+    print("Top 20 entities in hate tweets:")
+    for i in range(20):
+        print(results[CATEGORY_HATE][i][0]+ ": " + str(round(results[CATEGORY_HATE][i][1],4)))
+    print("\n")
+    print("Top 20 entities in non hate tweets:")
+    for i in range(20):
+        print(results[CATEGORY_NON_HATE][i][0]+ ": " + str(round(results[CATEGORY_NON_HATE][i][1],4)))
