@@ -79,17 +79,81 @@ minority, found that hate speech spread on Facebook contributed significantly to
 tensions in the region\cite{Reuters:myanmar_rohingya}.
 \\
 The goal of our project is to find efficient methods for identifying hate speech on twitter.
-Our aim is to find a set of features that could be used to identify hate speech content. 
+We aim to find a set of features that could be used to identify hate speech content. 
 
 \section{Problem description}
+Our investigation consists of two parts. In the first part we will collect a tweet data set by searching 
+for tweets with specific hashtags. This data set will be manually labeled as either hate or 
+non hate speech. We will then characterize the tweets in both categories using following features:
+
+\begin{itemize}
+    \item Sentiment analysis
+    \item LIWC features
+    \item Emoticon usage
+    \item Named entity usage
+\end{itemize}
+
+For the second part we will identify three active twitter accounts that frequently post 
+hate speech content. We will analyze the posting history of these users and calculate a 
+radicalization score for each user. 
 
 \section{Data sets}
 \subsection{Data set 1: Labeled hate speech}
+The first data set was collected using five specific hashtags, given to us in the assignment,
+that were likely targets for hate speech. The hashtags were the following: 
+\begin{itemize}
+    \item \#bombing
+    \item \#extremist
+    \item \#islamophobia
+    \item \#radicalist
+    \item \#terrorist    
+\end{itemize}
 
-Tada
+The tweets were collected using the Twitter premium search API with 30 day history. Retweets 
+and tweets not written in English were excluded from the search. Our goal was to retrieve at least 
+200 tweets per hashtag but we set the upper limit at 500. After the tweets were retrieved  
+through the API they were labeled manually. A summary of the labeled data set is shown in table 
+\ref{tab:data_set_1_summary}
+
+\begin{table}[!ht]
+    % Add some padding to the table cells:
+    \def\arraystretch{1.2}%
+    \begin{center}
+      \caption{Data set 1 summary}
+      \label{tab:data_set_1_summary}
+      \begin{tabular}{l l c c}
+        \hline
+        &\multicolumn{3}{c}{\textbf{Number of tweets}} \\
+        \textbf{\textit{Hashtag}}& \textbf{\textit{Non hate speech}}& \textbf{\textit{Hate speech}} & \textbf{\textit{Total}}  \\
+        \cline{2-4} 
+        \hline
+        \#bombing & 195 & 2 & 197\\
+        \#extremist & 368 & 6 & 374\\
+        \#islamophobia & 158 & 12 & 170\\
+        \#radicalist & 13 & 0 & 13\\
+        \#terrorist & 334 & 117 & 451\\
+        \hline
+        \textbf{TOTAL} & \textbf{1068} & \textbf{137} & \textbf{1205}\\
+        \hline
+      \end{tabular}  
+    \end{center}
+  \end{table}
+
+As can be seen from the table, some topics yielded very few tweets we would label as hate speech 
+while some of the hashtags, especially \#radicalist, were rarely used at all. The final 
+data set contained a total of 1205 tweets out of which 137 were labeled as hate speech.
+
 \subsection{Data set 2: Active hate speakers}
-Todo
-
+For the second data set, we looked for active twitter users who frequently posted hate speech content. 
+The search was limited to English speaking users only. In the end, we chose three users who fit our 
+criteria: 
+\begin{itemize}
+    \item User 1: An UK citizen and a blogger frequently posting hate speech targeted at muslims.
+    \item User 2: Active Finnish user frequently posting racist content.
+    \item User 3: A former leader of an American white supremacist group.
+\end{itemize}
+After selecting the users, we used Twitters full archive API to retrieve thousand tweets from each user for the
+radicalization analysis. 
 \section{Characterization of the labeled data set}
 \subsection{Sentiment analysis}
 TODO
