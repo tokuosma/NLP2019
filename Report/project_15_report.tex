@@ -167,7 +167,10 @@ After selecting the users, we used Twitters full archive API to retrieve thousan
 radicalization analysis. 
 \section{Characterization of the labeled data set}
 \subsection{Sentiment analysis}
-TODO
+For sentiment analysis we were tasked with plotting the percentage of polarity for both annotated hate speech post and annotated non-hate speech post.
+Comparing results from two different sentiment analyzers. We chose Textblob and Vader toolkits in python for using in our analysis. Both of these tools give out sentiment score values between -1 and 1
+because we had to split our post based on negative, neutral and positive we choose values as following: negative (-1 – (-0,333…)), neutral (-0,333… - 0,333…) and positive (0,333… - 1).
+Analysis was performed so that every tweet that we had was cleaned so that only the text part of tweets remained, these were then split to hate speech and non-hate speech and were then imported to both sentiment analyzers and result were compared.
 \subsection{LIWC features}
 To identify common themes and topics in the labeled tweet data set, we 
 used Empath, which is an open-source alternative to proprietary LIWC software  \cite{fast2016empath}. 
