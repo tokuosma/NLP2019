@@ -114,7 +114,7 @@ A summary of the labeled data set is shown in table
       \caption{Data set 1 summary}
       \label{tab:data_set_1_summary}
       \begin{tabular}{l c c c}
-        \hline
+        \hline\hline
         &\multicolumn{3}{c}{\textbf{Number of tweets}} \\
         \textbf{\textit{Hashtag}}& \textbf{\textit{Non-hate speech}}& \textbf{\textit{Hate speech}} & \textbf{\textit{Total}}  \\
         \cline{2-4} 
@@ -148,7 +148,7 @@ For the second data set, we looked for active twitter users who frequently poste
 The search was limited to English speaking users only. In the end, we chose three users who fit our 
 criteria: 
 \begin{itemize}
-    \item User 1: An UK citizen and a blogger frequently posting hate speech targeted at muslims.
+    \item User 1: An UK citizen and a blogger frequently posting hate speech targeted at Muslims.
     \item User 2: Active Finnish user frequently posting racist content.
     \item User 3: A former leader of an American white supremacist group.
 \end{itemize}
@@ -368,7 +368,7 @@ the appenix.
 
 \begin{table}[!ht]
   % Add some padding to the table cells:
-  \def\arraystretch{1.2}%
+  \def\arraystretch{1.0}%
   \begin{center}
     \caption{Top 20 most common named entities in hate speech tweets}
     \label{tab:named_entities_hate}
@@ -377,7 +377,7 @@ the appenix.
       % \multicolumn{2}{c}{\textbf{non-hate speech}} 
       \multicolumn{4}{c}{\textbf{Hate speech}}\\
       \hline
-      \textbf{Entity}&\textbf{Frequency [\%]}&\textbf{Entity}&\textbf{Frequency [\%]}\\
+      \textbf{Entity}&\textbf{Freq. [\%]}&\textbf{Entity}&\textbf{Freq. [\%]}\\
       \hline
       UK & 0.2409 & LabourParty & 0.0511\\
       Antisemitic & 0.1168 & Communist & 0.0511\\
@@ -405,7 +405,7 @@ the appenix.
       % \multicolumn{2}{c}{\textbf{non-hate speech}} 
       \multicolumn{4}{c}{\textbf{Hate speech}}\\
       \hline
-      \textbf{Entity}&\textbf{Frequency [\%]}&\textbf{Entity}&\textbf{Frequency [\%]}\\
+      \textbf{Entity}&\textbf{Freq. [\%]}&\textbf{Entity}&\textbf{Freq. [\%]}\\
       \hline
       Islamophobia & 0.1152 & graffiti & 0.0403\\
       JeremyCorbyn & 0.0627 & EXTREMIST & 0.0393\\
@@ -456,7 +456,7 @@ Standardized value is acquired for each sentiment value using the following form
 \(z = (X - \mu)/\sigma\), where \(X\) is the value in question, and \(\mu\) and \(\sigma\) are the mean and the standard deviation of the dataset that the value belongs to. Standardized values have a mean of \(0\) and a standard deviation of \(1\). This means that a standardized value of 3, for example, is three standard deviations away from the mean to the positive side.\\
 \(DN\): The duration, in number of days, between the oldest and newest tweet with a negative sentiment. \\
 \\
-We used pythons TextBlob for calculating the sentiments of each tweet and got the shown in table \ref{tab:radicalization_scores}.
+We used pythons TextBlob for calculating the sentiments of each tweet and got the results shown in table \ref{tab:radicalization_scores}.
 
 \subsection{Results}
 
@@ -567,7 +567,11 @@ Alternative tools for sentiment analysis should also be considered.
 
 \section*{Source Code} \addcontentsline{toc}{section}{Source}
 Full source code of our project, including the data sets, can be found at:
+\\\\
 https://github.com/tokuosma/NLP2019
+\\\\
+Interactive calculation of the results can be performed in the Jupyter notebook 
+also included in the repository.
 
 \bibliographystyle{IEEEtran}
 \bibliography{IEEEabrv,project_15}
