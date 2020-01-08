@@ -8,6 +8,7 @@ from datetime import MAXYEAR
 from datetime import MINYEAR
 from datetime import datetime
 from datetime import date
+# from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 # import pandas as pd
 
 
@@ -23,6 +24,7 @@ def analyse_users(source_file):
     no_very_neg_posts = 0
     highest_date = date(MINYEAR, 1, 1)
     lowest_date = date(MAXYEAR, 12, 31)
+    # analyzer = SentimentIntensityAnalyzer()
 
     with open(source_file,'r') as json_file:
         tweets = json.loads(json_file.read())
@@ -36,10 +38,14 @@ def analyse_users(source_file):
         text = re.sub(r'https?:\/\/.*[a-zA-Z0-9.\/_%…]*', '', text, flags=re.MULTILINE)
         text = re.sub(r'@[a-zA-Z0-9.\/_%…]*', '', text, flags=re.MULTILINE)
         testimonial = TextBlob(text)
+        # vs = analyzer.polarity_scores(text)
         current_date = datetime.strptime(tweet['created_at'], "%a %b %d %X %z %Y").date()
+        # tweets_and_sentiments.append((text, vs['compound']))
+        # sentiments.append(vs['compound'])
         tweets_and_sentiments.append((text, testimonial.sentiment.polarity))
-        sentiments .append(testimonial.sentiment.polarity)
+        sentiments.append(testimonial.sentiment.polarity)
         # print(text+'   '+str(testimonial.sentiment))
+        # if vs['compound'] < 0:
         if testimonial.sentiment.polarity < 0:
             no_neg_posts += 1
             if current_date < lowest_date:
@@ -48,10 +54,13 @@ def analyse_users(source_file):
                 highest_date = current_date
 
     sentiment_mean = mean(sentiments)
-    sentiment_stdev =stdev(sentiments)
+    # print(sentiment_mean)
+    sentiment_stdev = stdev(sentiments)
+    # print(sentiment_stdev)
 
     for tweet,sentiment in tweets_and_sentiments:
         standardized_value = (sentiment-sentiment_mean)/sentiment_stdev
+        # print(tweet, sentiment, standardized_value)
         if standardized_value < -3: # if a negative sentiments standard value is less than -3, the post related to it is "very negative"
             very_neg_tweets_and_sentiments.append((tweet, sentiment))
             no_very_neg_posts += 1
@@ -74,10 +83,41 @@ def analyse_users(source_file):
     }
     return statistics_dict
 if __name__ == "__main__":
+
     source_files = ['Data\\tweets_user_ViidarUkonpoika.json', 'Data\\tweets_user_UKInfidel.json', 'Data\\tweets_user_DrDavidDuke.json']#, 'Data\\tweets_extremist.json', 'Data\\tweets_bombing.json', 'Data\\tweets_islamophobia.json', 'Data\\tweets_radicalist.json']
     first_user = analyse_users('Data\\tweets_user_ViidarUkonpoika.json')
     second_user = analyse_users('Data\\tweets_user_UKInfidel.json')
     third_user = analyse_users('Data\\tweets_user_DrDavidDuke.json')
     
 
-    print(first_user['source_file'])
+    print('file: ' + first_user["source_file"])
+    print('mean sentiment percentile: ' + str(first_user["mean_sentiment_perc"]))
+    print('volume of negative posts: ' + str(first_user["vol_neg_posts"]))
+    print('volume of very negative posts:' + str(first_user["vol_very_neg_posts"]))
+    print('number of days active: '+ str(first_user["days_active"]))
+    print('radicalization score: '+ str(first_user["radicalization_score"]))
+    print('\n\n')
+    # print('very negative post and their sentiments:')
+    # [print(str(item[0]),item[1]) for item in first_user["very_neg_tweets_and_sentiments"]]
+
+
+    print('file: ' + second_user["source_file"])
+    print('mean sentiment percentile: ' + str(second_user["mean_sentiment_perc"]))
+    print('volume of negative posts: ' + str(second_user["vol_neg_posts"]))
+    print('volume of very negative posts:' + str(second_user["vol_very_neg_posts"]))
+    print('number of days active: '+ str(second_user["days_active"]))
+    print('radicalization score: '+ str(second_user["radicalization_score"]))
+    print('\n\n')
+    # print('very negative post and their sentiments:')
+    # [print(str(item[0]),item[1]) for item in second_user["very_neg_tweets_and_sentiments"]]
+
+
+    print('file: ' + third_user["source_file"])
+    print('mean sentiment percentile: ' + str(third_user["mean_sentiment_perc"]))
+    print('volume of negative posts: ' + str(third_user["vol_neg_posts"]))
+    print('volume of very negative posts:' + str(third_user["vol_very_neg_posts"]))
+    print('number of days active: '+ str(third_user["days_active"]))
+    print('radicalization score: '+ str(third_user["radicalization_score"]))
+    print('\n\n')
+    # print('very negative post and their sentiments:')
+    # [print(str(item[0]),item[1]) for item in third_user["very_neg_tweets_and_sentiments"]]
