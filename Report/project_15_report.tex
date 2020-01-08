@@ -317,8 +317,68 @@ the same time we were collection our data sets.
 TODO
 \subsection{Named phrases}
 TODO
-\section{Radicalization of of active hate speakers}
-TODO
+\section{Radicalization of active hate speakers}
+The second dataset consist of tweets from three user accounts on Twitter that are active hate-speech spreaders. Like in the first part, only English speaking users were examined.
+We aggregate a thousand tweets per user and give each user a radicalization score based on the characteristics of their tweets.
+
+We extract the following features from their tweets per user:
+\begin{itemize}
+  \item Average sentiment score percentile (\(AS\))
+  \item Volume of negative posts (\(VN\))
+  \item Severity of negative posts (\(SN\))
+  \item Duration of negative posts (\(DN\))
+\end{itemize}
+We use the following formula to compute a radicalization score for each user
+\[Radicalization\: score = (K /AS^3) \cdot (VN \cdot SN \cdot DN)\], where \(K = 7\)
+%\caption{Radicalization score formula}
+
+
+\(AS\): Sentiment is within the range [-1,1], where -1 is the most negative and 1 the most positive sentiment.
+ This range must be normalized to [0,1] to be used as intended in the radicalization score formula.\\ %\ref{}
+\(VN\): The proportion of the posts that had a negative sentiment.\\
+\(SN\): The proportion of the posts that had a 'very negative' sentiment. If a posts standardized value is less than negative three, it was considered as 'very negative'.
+Standardized value is acuired for each sentiment value using the following formula;
+\(z = (X - \mu)/\sigma\), where \(X\) is the value in question, and \(\mu\) and \(\sigma\) are the mean and the standard deviation of the dataset that the value belongs to. Standardized values have a mean of \(0\) and a standard deviation of \(1\). This means that a standardized value of 3, for example, is three standard deviations away from the mean to the positive side.\\
+\(DN\): The duration, in number of days, between the oldest and newest tweet with a negative sentiment. \\
+\\
+\subsection{Results}
+We used pythons TextBlob for calculating the sentiments of each tweet and got the following results:
+First user:
+\begin{table}[]
+  \begin{tabular}{ll}
+  mean sentiment percentile:     & 0.5246912423383495 \\
+  volume of negative posts:      & 0.218              \\
+  volume of very negative posts: & 0.014              \\
+  number of days active:         & 77                 \\
+  radicalization score:          & 11.388377331838583
+  \end{tabular}
+\end{table}
+Second user:
+\begin{table}[]
+  \begin{tabular}{ll}
+  mean sentiment percentile:     & 0.5016298412698412 \\
+  volume of negative posts:      & 0.22               \\
+  volume of very negative posts: & 0.022              \\
+  number of days active:         & 503                \\
+  radicalization score:          & 135.00855660731082
+  \end{tabular}
+\end{table}
+\begin{table}[]
+  \begin{tabular}{ll}
+  mean sentiment percentile:     & 0.5222739147067796 \\
+  volume of negative posts:      & 0.279               \\
+  volume of very negative posts: & 0.012              \\
+  number of days active:         & 246                \\
+  radicalization score:          & 40.46910414477672
+  \end{tabular}
+\end{table}
+\subsection{Problems}
+TextBlobs default sentiment analyzator uses the same implementation as the "patterns" library does, and it has a certain drawback: it only takes adjetives into account. 
+This lead to most of the tweets sentiment scores to be zero.\\
+
+
+
+
 
 \section{Results}
 Considering the hashtags that were used to collect the tweets, 
