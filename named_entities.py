@@ -25,8 +25,10 @@ def get_named_entities(tweets):
             num_non_hate += 1
         doc = nlp(text)
         for ent in doc.ents:
+            if ent.text == "#":
+                break
             if ent.text in results[category]:
-                #Add way to increase the counter
+                #Way to increase the counter
                 results[category][ent.text] += 1
             else:
                 results[category][ent.text] = 1
