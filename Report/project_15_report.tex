@@ -167,7 +167,10 @@ After selecting the users, we used Twitters full archive API to retrieve thousan
 radicalization analysis. 
 \section{Characterization of the labeled data set}
 \subsection{Sentiment analysis}
-TODO
+For sentiment analysis we were tasked with plotting the percentage of polarity for both annotated hate speech post and annotated non-hate speech post.
+Comparing results from two different sentiment analyzers. We chose Textblob and Vader toolkits in python for using in our analysis. Both of these tools give out sentiment score values between -1 and 1
+because we had to split our post based on negative, neutral and positive we choose values as following: negative (-1 – (-0,333…)), neutral (-0,333… - 0,333…) and positive (0,333… - 1).
+Analysis was performed so that every tweet that we had was cleaned so that only the text part of tweets remained, these were then split to hate speech and non-hate speech and were then imported to both sentiment analyzers and result were compared.
 \subsection{LIWC features}
 To identify common themes and topics in the labeled tweet data set, we 
 used Empath, which is an open-source alternative to proprietary LIWC software  \cite{fast2016empath}. 
@@ -330,8 +333,68 @@ The same trend of named entities can be seen in the frequent entities used in tw
 
 \subsection{Named phrases}
 TODO
-\section{Radicalization of of active hate speakers}
-TODO
+\section{Radicalization of active hate speakers}
+The second dataset consist of tweets from three user accounts on Twitter that are active hate-speech spreaders. Like in the first part, only English speaking users were examined.
+We aggregate a thousand tweets per user and give each user a radicalization score based on the characteristics of their tweets.
+
+We extract the following features from their tweets per user:
+\begin{itemize}
+  \item Average sentiment score percentile (\(AS\))
+  \item Volume of negative posts (\(VN\))
+  \item Severity of negative posts (\(SN\))
+  \item Duration of negative posts (\(DN\))
+\end{itemize}
+We use the following formula to compute a radicalization score for each user
+\[Radicalization\: score = (K /AS^3) \cdot (VN \cdot SN \cdot DN)\], where \(K = 7\)
+%\caption{Radicalization score formula}
+
+
+\(AS\): Sentiment is within the range [-1,1], where -1 is the most negative and 1 the most positive sentiment.
+ This range must be normalized to [0,1] to be used as intended in the radicalization score formula.\\ %\ref{}
+\(VN\): The proportion of the posts that had a negative sentiment.\\
+\(SN\): The proportion of the posts that had a 'very negative' sentiment. If a posts standardized value is less than negative three, it was considered as 'very negative'.
+Standardized value is acuired for each sentiment value using the following formula;
+\(z = (X - \mu)/\sigma\), where \(X\) is the value in question, and \(\mu\) and \(\sigma\) are the mean and the standard deviation of the dataset that the value belongs to. Standardized values have a mean of \(0\) and a standard deviation of \(1\). This means that a standardized value of 3, for example, is three standard deviations away from the mean to the positive side.\\
+\(DN\): The duration, in number of days, between the oldest and newest tweet with a negative sentiment. \\
+\\
+\subsection{Results}
+We used pythons TextBlob for calculating the sentiments of each tweet and got the following results:
+First user:
+\begin{table}[]
+  \begin{tabular}{ll}
+  mean sentiment percentile:     & 0.5246912423383495 \\
+  volume of negative posts:      & 0.218              \\
+  volume of very negative posts: & 0.014              \\
+  number of days active:         & 77                 \\
+  radicalization score:          & 11.388377331838583
+  \end{tabular}
+\end{table}
+Second user:
+\begin{table}[]
+  \begin{tabular}{ll}
+  mean sentiment percentile:     & 0.5016298412698412 \\
+  volume of negative posts:      & 0.22               \\
+  volume of very negative posts: & 0.022              \\
+  number of days active:         & 503                \\
+  radicalization score:          & 135.00855660731082
+  \end{tabular}
+\end{table}
+\begin{table}[]
+  \begin{tabular}{ll}
+  mean sentiment percentile:     & 0.5222739147067796 \\
+  volume of negative posts:      & 0.279               \\
+  volume of very negative posts: & 0.012              \\
+  number of days active:         & 246                \\
+  radicalization score:          & 40.46910414477672
+  \end{tabular}
+\end{table}
+\subsection{Problems}
+TextBlobs default sentiment analyzator uses the same implementation as the "patterns" library does, and it has a certain drawback: it only takes adjetives into account. 
+This lead to most of the tweets sentiment scores to be zero.\\
+
+
+
+
 
 \section{Results}
 Considering the hashtags that were used to collect the tweets, 
@@ -350,6 +413,13 @@ seem poor candidates for indicators.
 Many of the hate tweets containing the emoticon :joy: were malicious and mocking. 
 Detecting the misalignment between the nominal meaning of an emoticon and the actual tone of the message could 
 potentially be an efficient indicator of hateful content.
+
+Textblob results show that about 75\%  off hate speech was positive and about 78\% off non-hate speech was also positive and rest of the post divided evenly among neutral and negative.
+Surprising here is that according to textblob most of our hate speech would be positive hate speech and not negative what would be the logical solution because often hate speech is considered negative.
+Same is true on non-hate speech positive is to most common polarity but this is more reasonable because tweets that are not considered to be hate should be more on the positive side. 
+Vader analyzer but most of our tweets in the extreme sections of the polarity so most of hate speech is negative hate and most of non-hate speech is in the positive category.
+Vader analyzing was also evenly distributed so that all categories were withing 20\% of each other’s values.
+Last comparison was that we checked how many percentile units the two sentiment analyzers were of each other and maximum difference was with positive hate 45\% and least different were neutral non-hate 11\%.
 
 The most frequently used named entities in tweets studied did not differ very much between normal tweets and hate tweets. Named entities found in the tweets used were mainly of two types. First type are named entities related to current events, mainly to Brexit that is currently ongoing in United Kingdom and Jeremy Corbyn. Some of this type of entities were in tweets that were related to the current situation between Pakistan and India.
 	The other type was named entities that are closely related to hate speech but not necessarily to major current events. Examples of such entities include Nazis, Islamophobia and Terrorist.
