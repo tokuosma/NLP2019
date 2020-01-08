@@ -12,40 +12,29 @@
 \begin{document}
 
 \title{Project \#15: Twitter hate speech detection 2\\
-% {\footnotesize \textsuperscript{*}Note: Sub-titles are not captured in Xplore and
-% should not be used}
-% \thanks{Identify applicable funding agency here. If none, delete this.}
 }
 
-\author{\IEEEauthorblockN{Janne Eskola}
-% \IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
-% \textit{name of organization (of Aff.)}\\
-% City, Country \\
-% email address or ORCID}
+\author{\IEEEauthorblockN{Janne Eskola\\janne.eskola@student.oulu.fi}
+
 \and
-\IEEEauthorblockN{Teemu Ikävalko}
-% \IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
-% \textit{name of organization (of Aff.)}\\
-% City, Country \\
-% email address or ORCID}
+\IEEEauthorblockN{Teemu Ikävalko\\Teemu.Ikavalko@student.oulu.fi}
+
 \and
-\IEEEauthorblockN{Toni Kuosmanen}
-% \IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
-% \textit{name of organization (of Aff.)}\\
-% City, Country \\
-% email address or ORCID}
+\IEEEauthorblockN{Toni Kuosmanen\\toni.kuosmanen@student.oulu.fi}
+
 \and
-\IEEEauthorblockN{Tapio Kursula}
-% \IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
-% \textit{name of organization (of Aff.)}\\
-% City, Country \\
-% email address or ORCID}
+\IEEEauthorblockN{Tapio Kursula\\t.kursula@gmail.com}
+
 }
 
 \maketitle
 
 \begin{abstract}
-Abstract
+We experimented with several possible methods for detecting hate speech on the Twitter 
+platform. Approaches utilizing sentiment analysis did not perform as well as expected but 
+we got better results using topic and named entity analysis. We also tested a possible metric 
+for measuring the radicalization of a Twitter user but more effort needs to be made to 
+validate the proposed metric.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -96,7 +85,7 @@ non-hate speech. We will then characterize the tweets in both categories using f
 
 For the second part we will identify three active twitter accounts that frequently post 
 hate speech content. We will analyze the posting history of these users and calculate a 
-radicalization score for each user. 
+proposed radicalization score for each user. 
 
 \section{Data sets}
 \subsection{Data set 1: Labeled hate speech}
@@ -372,30 +361,76 @@ We investigated the use of named entities and their frequency in tweets containi
 speech and not containing hate speech. The tweets were analyzed using spaCy natural 
 language processing library for python. Using the default spacy model (en\_core\_web\_sm) 
 for entity recognition, we identified the 20 most used named entities in both sets of 
-tweets (the sets being tweets containing hate speech and tweets that didn’t contain 
-hate speech) and their frequency based on the size of the tweet set. We also plotted 
-graphs of these entities and their frequency.
+tweets and their frequency based on the size of the tweet set 
+(Tables \ref{tab:named_entities_hate} and \ref{tab:named_entities_non_hate}).
+We also plotted graphs of these entities and their frequency. The graphs can be found in 
+the appenix. 
 
-<Top 20 entities in hate tweets>
+\begin{table}[!ht]
+  % Add some padding to the table cells:
+  \def\arraystretch{1.2}%
+  \begin{center}
+    \caption{Top 20 most common named entities in hate speech tweets}
+    \label{tab:named_entities_hate}
+    \begin{tabular}{l c | c c}
+      \hline\hline
+      % \multicolumn{2}{c}{\textbf{non-hate speech}} 
+      \multicolumn{4}{c}{\textbf{Hate speech}}\\
+      \hline
+      \textbf{Entity}&\textbf{Frequency [\%]}&\textbf{Entity}&\textbf{Frequency [\%]}\\
+      \hline
+      UK & 0.2409 & LabourParty & 0.0511\\
+      Antisemitic & 0.1168 & Communist & 0.0511\\
+      Socialist & 0.0876 & Terrorist & 0.0438\\
+      2019 & 0.0803 & Pakistan & 0.0438\\
+      ChairmanCorbyn & 0.073 & Jews & 0.0438\\
+      Nazis & 0.0584 & ComradeCorbyn & 0.0438\\
+      Nazi & 0.0584 & NeverCorbyn & 0.0292\\
+      JeremyCorbyn & 0.0584 & Labour & 0.0292\\
+      Islamophobia & 0.0584 & ISIS & 0.0292\\
+      London & 0.0511 & GeneralElection2019 & 0.0292\\                        
+      \hline\hline
+    \end{tabular}  
+  \end{center}
+\end{table}
 
-<Top 20 entities in non hate tweets>
+\begin{table}[!ht]
+  % Add some padding to the table cells:
+  \def\arraystretch{1.2}%
+  \begin{center}
+    \caption{Top 20 most common named entities in non-hate speech tweets}
+    \label{tab:named_entities_non_hate}
+    \begin{tabular}{l c | c c}
+      \hline\hline
+      % \multicolumn{2}{c}{\textbf{non-hate speech}} 
+      \multicolumn{4}{c}{\textbf{Hate speech}}\\
+      \hline
+      \textbf{Entity}&\textbf{Frequency [\%]}&\textbf{Entity}&\textbf{Frequency [\%]}\\
+      \hline
+      Islamophobia & 0.1152 & graffiti & 0.0403\\
+      JeremyCorbyn & 0.0627 & EXTREMIST & 0.0393\\
+      GeneralElection2019 & 0.0599 & HINDU & 0.0384\\
+      Communist & 0.0599 & NeverCorbyn & 0.0365\\
+      India & 0.059 & Pakistan & 0.029\\
+      Lies & 0.0515 & Labour & 0.029\\
+      RSS & 0.0468 & US & 0.0281\\
+      Twat & 0.044 & Muslims & 0.0243\\
+      UK & 0.0421 & berlin & 0.0234\\
+      BJP & 0.0412 & Muslim & 0.0234\\                          
+      \hline\hline
+    \end{tabular}  
+  \end{center}
+\end{table}
 
-<Graph of entities in hate tweets>
-
-<Graph of entities in non hate tweets>
-
-Note the high frequency of Terrorist and Islamophobia in tweets containing hate speech. 
-Since the hashtags and the words used in them are recognized as named entities, these 
-entities are high on the list since they were words used to collect tweet used in this study.
-In tweets containing hate speech other frequent named entities are closely related to UK 
-and their current political situation. Jeremy Corbyn, his political party and his relations 
-with Pakistan were mentioned in many of the hate speech tweets.
-
-The same trend of named entities can be seen in the frequent entities used in tweets that 
-did not contain hate speech. Many of the most frequent entities are related to United 
-Kingdom and Jeremy Corbyn. Other frequent topic that can be seen in this list is the 
-conflict between Pakistan and India, with many of the entities related to these countries 
-and their major religions, Hinduism and Islam.
+In tweets containing hate speech frequent named entities are closely related to UK and their 
+current political situation. Jeremy Corbyn, his political party and his relations with 
+Pakistan were mentioned in many of the hate speech tweets.
+The hate speech entity list also contains a high number of words closely associated with 
+general hate speech, such as Nazi and Islamophobia. The same trend of named entities can 
+be seen in the frequent entities used in tweets that did not contain hate speech. 
+Many of the most frequent entities are related to United Kingdom and Jeremy Corbyn. 
+Other frequent topic that can be seen in this list is the conflict between Pakistan and 
+India, with entities related to these countries and their major religions, Hinduism and Islam.
 
 \section{Radicalization of active hate speakers}
 The second dataset consist of tweets from three user accounts on Twitter that are active hate-speech spreaders. Like in the first part, only English speaking users were examined.
@@ -421,8 +456,9 @@ Standardized value is acquired for each sentiment value using the following form
 \(z = (X - \mu)/\sigma\), where \(X\) is the value in question, and \(\mu\) and \(\sigma\) are the mean and the standard deviation of the dataset that the value belongs to. Standardized values have a mean of \(0\) and a standard deviation of \(1\). This means that a standardized value of 3, for example, is three standard deviations away from the mean to the positive side.\\
 \(DN\): The duration, in number of days, between the oldest and newest tweet with a negative sentiment. \\
 \\
+We used pythons TextBlob for calculating the sentiments of each tweet and got the shown in table \ref{tab:radicalization_scores}.
+
 \subsection{Results}
-We used pythons TextBlob for calculating the sentiments of each tweet and got the following results:
 
 \begin{table}[!ht]
   \def\arraystretch{1.2}%
@@ -446,10 +482,6 @@ We used pythons TextBlob for calculating the sentiments of each tweet and got th
 \end{center}
 \end{table}
 
-\subsection{Problems}
-TextBlobs default sentiment analyzator uses the same implementation as the "patterns" library does, and it has a certain drawback: it only takes adjectives into account. 
-This lead to most of the tweets sentiment scores to be zero.\\
-
 \section{Results}
 
 \subsection{Sentiment analysis}
@@ -459,7 +491,7 @@ for hate and non-hate groups respectively, to be positive. Surprisingly, negativ
 scores made up only about 10 \% of the Textblob sentiments. These results show that Texblob 
 sentiment scores are not a good way to distinguish between hate and non hate speech.
 
-VADER analyzer was a bit better in discriminating between the hate and non-hate tweet sentiments.
+VADER analyzer performed slightly better in discriminating between the hate and non-hate tweet sentiments.
 Negative sentiments were most common in the hate speech and positive sentiments in the non-hate 
 speech tweets (Fig \ref{fig:vader_sentiments}). The sentiments were more evenly distributed so that all categories were within 20\% of 
 each other’s values. Still, the difference between the hate and non-hate sentiments is not 
@@ -495,192 +527,47 @@ The other type was named entities that are closely related to hate speech but no
 Examples of such entities include Nazis, Islamophobia and Terrorist.
 This analysis shows that named entities are an effective way to find topics and events that generate 
 hate speech content. However, differentiating between hate speech and not hate speech through this 
-method is less effective since the data sets that this analysis produced are very similar.
+method is less effective since the data sets that this analysis produced are very similar. 
+
+The results also clearly show how strongly current events can affect the type and 
+frequency of named entities. The December elections in United Kingdom left a clear mark in our 
+data set. If the data was gathered now, we predict several of the named entities would not be 
+present. The entities that attract the most hate speech are not stable but instead might shift rapidly.
 
 \subsection{Radicalization scores}
-TODO
+All of the users average sentiment percentiles were close to neutral - in fact,
+all of them were slightly or somewhat positive. 
+Majority of the tweets were given a neutral sentiment, which gives the users overall
+a rather low radicalization score from the maximum, given the high impact that \(AS\)
+has to the formula. For example, if a theoretical users variables were as follows: \(AS\) = 0.2,
+\(VN\) = 0.5,\(SN\) = 0.25\(DN\) = 300, their radicalization score would be 4687.5, three orders
+of magnitude higher than the scores these users got. This neutrality 
+is probably partly due to the sentiment analyzers sole focus on adjectives. The sentiment analyzer
+was unable to analyze more complex patterns in the tweets.
+TextBlobs default sentiment analyzer uses the same implementation as the "patterns" library does,
+and it has a certain drawback: it only takes adjectives into account. This lead to most of the 
+tweets sentiment scores to be zero.
 
 \section{Conclusions}
+We experimented with several different methods in order to find features for identifying hate speech.
+The approaches employing sentiment analysis did not work as well as we predicted in distinguishing between 
+normal speech and hate speech. Other methods of sentiment analysis might prove more effective.
 
+The Empath topics showed a clear distinction between the hate and non-hate data sets. Feature vector
+constructed from the topics most common to hate speech could be employed for training a model to recognize 
+hate speech. Named entities could also be used though training the model might be harder since 
+trending entities are so time dependent. Emoticon usage, if evaluated purely as the types of 
+emoticons used, did not seem particularly effective in distinguishing hate speech. Combining 
+emoticon analysis with other methods might provide better results.
 
+It is hard to gauge how well the calculated radicalization scores reflects the actual radicalization 
+of the subjects. Further more our analysis might have suffered from the poor performance of the 
+Texblob sentiment analysis. More effort should be spent in the future in order to validate the metric.
+Alternative tools for sentiment analysis should also be considered.
 
-
-
-
-
-% \subsection{Units}
-% \begin{itemize}
-% \item Use either SI (MKS) or CGS as primary units. (SI units are encouraged.) English units may be used as secondary units (in parentheses). An exception would be the use of English units as identifiers in trade, such as ``3.5-inch disk drive''.
-% \item Avoid combining SI and CGS units, such as current in amperes and magnetic field in oersteds. This often leads to confusion because equations do not balance dimensionally. If you must use mixed units, clearly state the units for each quantity that you use in an equation.
-% \item Do not mix complete spellings and abbreviations of units: ``Wb/m\textsuperscript{2}'' or ``webers per square meter'', not ``webers/m\textsuperscript{2}''. Spell out units when they appear in text: ``. . . a few henries'', not ``. . . a few H''.
-% \item Use a zero before decimal points: ``0.25'', not ``.25''. Use ``cm\textsuperscript{3}'', not ``cc''.)
-% \end{itemize}
-
-% \subsection{Equations}
-% Number equations consecutively. To make your 
-% equations more compact, you may use the solidus (~/~), the exp function, or 
-% appropriate exponents. Italicize Roman symbols for quantities and variables, 
-% but not Greek symbols. Use a long dash rather than a hyphen for a minus 
-% sign. Punctuate equations with commas or periods when they are part of a 
-% sentence, as in:
-% \begin{equation}
-% a+b=\gamma\label{eq}
-% \end{equation}
-
-% Be sure that the 
-% symbols in your equation have been defined before or immediately following 
-% the equation. Use ``\eqref{eq}'', not ``Eq.~\eqref{eq}'' or ``equation \eqref{eq}'', except at 
-% the beginning of a sentence: ``Equation \eqref{eq} is . . .''
-
-% \subsection{\LaTeX-Specific Advice}
-
-% Please use ``soft'' (e.g., \verb|\eqref{Eq}|) cross references instead
-% of ``hard'' references (e.g., \verb|(1)|). That will make it possible
-% to combine sections, add equations, or change the order of figures or
-% citations without having to go through the file line by line.
-
-% Please don't use the \verb|{eqnarray}| equation environment. Use
-% \verb|{align}| or \verb|{IEEEeqnarray}| instead. The \verb|{eqnarray}|
-% environment leaves unsightly spaces around relation symbols.
-
-% Please note that the \verb|{subequations}| environment in {\LaTeX}
-% will increment the main equation counter even when there are no
-% equation numbers displayed. If you forget that, you might write an
-% article in which the equation numbers skip from (17) to (20), causing
-% the copy editors to wonder if you've discovered a new method of
-% counting.
-
-% {\BibTeX} does not work by magic. It doesn't get the bibliographic
-% data from thin air but from .bib files. If you use {\BibTeX} to produce a
-% bibliography you must send the .bib files. 
-
-% {\LaTeX} can't read your mind. If you assign the same label to a
-% subsubsection and a table, you might find that Table I has been cross
-% referenced as Table IV-B3. 
-
-% {\LaTeX} does not have precognitive abilities. If you put a
-% \verb|\label| command before the command that updates the counter it's
-% supposed to be using, the label will pick up the last counter to be
-% cross referenced instead. In particular, a \verb|\label| command
-% should not go before the caption of a figure or a table.
-
-% Do not use \verb|\nonumber| inside the \verb|{array}| environment. It
-% will not stop equation numbers inside \verb|{array}| (there won't be
-% any anyway) and it might stop a wanted equation number in the
-% surrounding equation.
-
-% \subsection{Some Common Mistakes}\label{SCM}
-% \begin{itemize}
-% \item The word ``data'' is plural, not singular.
-% \item The subscript for the permeability of vacuum $\mu_{0}$, and other common scientific constants, is zero with subscript formatting, not a lowercase letter ``o''.
-% \item In American English, commas, semicolons, periods, question and exclamation marks are located within quotation marks only when a complete thought or name is cited, such as a title or full quotation. When quotation marks are used, instead of a bold or italic typeface, to highlight a word or phrase, punctuation should appear outside of the quotation marks. A parenthetical phrase or statement at the end of a sentence is punctuated outside of the closing parenthesis (like this). (A parenthetical sentence is punctuated within the parentheses.)
-% \item A graph within a graph is an ``inset'', not an ``insert''. The word alternatively is preferred to the word ``alternately'' (unless you really mean something that alternates).
-% \item Do not use the word ``essentially'' to mean ``approximately'' or ``effectively''.
-% \item In your paper title, if the words ``that uses'' can accurately replace the word ``using'', capitalize the ``u''; if not, keep using lower-cased.
-% \item Be aware of the different meanings of the homophones ``affect'' and ``effect'', ``complement'' and ``compliment'', ``discreet'' and ``discrete'', ``principal'' and ``principle''.
-% \item Do not confuse ``imply'' and ``infer''.
-% \item The prefix ``non'' is not a word; it should be joined to the word it modifies, usually without a hyphen.
-% \item There is no period after the ``et'' in the Latin abbreviation ``et al.''.
-% \item The abbreviation ``i.e.'' means ``that is'', and the abbreviation ``e.g.'' means ``for example''.
-% \end{itemize}
-% An excellent style manual for science writers is \cite{b7}.
-
-% \subsection{Authors and Affiliations}
-% \textbf{The class file is designed for, but not limited to, six authors.} A 
-% minimum of one author is required for all conference articles. Author names 
-% should be listed starting from left to right and then moving down to the 
-% next line. This is the author sequence that will be used in future citations 
-% and by indexing services. Names should not be listed in columns nor group by 
-% affiliation. Please keep your affiliations as succinct as possible (for 
-% example, do not differentiate among departments of the same organization).
-
-% \subsection{Identify the Headings}
-% Headings, or heads, are organizational devices that guide the reader through 
-% your paper. There are two types: component heads and text heads.
-
-% Component heads identify the different components of your paper and are not 
-% topically subordinate to each other. Examples include Acknowledgments and 
-% References and, for these, the correct style to use is ``Heading 5''. Use 
-% ``figure caption'' for your Figure captions, and ``table head'' for your 
-% table title. Run-in heads, such as ``Abstract'', will require you to apply a 
-% style (in this case, italic) in addition to the style provided by the drop 
-% down menu to differentiate the head from the text.
-
-% Text heads organize the topics on a relational, hierarchical basis. For 
-% example, the paper title is the primary text head because all subsequent 
-% material relates and elaborates on this one topic. If there are two or more 
-% sub-topics, the next level head (uppercase Roman numerals) should be used 
-% and, conversely, if there are not at least two sub-topics, then no subheads 
-% should be introduced.
-
-% \subsection{Figures and Tables}
-% \paragraph{Positioning Figures and Tables} Place figures and tables at the top and 
-% bottom of columns. Avoid placing them in the middle of columns. Large 
-% figures and tables may span across both columns. Figure captions should be 
-% below the figures; table heads should appear above the tables. Insert 
-% figures and tables after they are cited in the text. Use the abbreviation 
-% ``Fig.~\ref{fig}'', even at the beginning of a sentence.
-
-% \begin{table}[htbp]
-% \caption{Table Type Styles}
-% \begin{center}
-% \begin{tabular}{|c|c|c|c|}
-% \hline
-% \textbf{Table}&\multicolumn{3}{|c|}{\textbf{Table Column Head}} \\
-% \cline{2-4} 
-% \textbf{Head} & \textbf{\textit{Table column subhead}}& \textbf{\textit{Subhead}}& \textbf{\textit{Subhead}} \\
-% \hline
-% copy& More table copy$^{\mathrm{a}}$& &  \\
-% \hline
-% \multicolumn{4}{l}{$^{\mathrm{a}}$Sample of a Table footnote.}
-% \end{tabular}
-% \label{tab1}
-% \end{center}
-% \end{table}
-
-% \begin{figure}[htbp]
-% \centerline{\includegraphics{fig1.png}}
-% \caption{Example of a figure caption.}
-% \label{fig}
-% \end{figure}
-
-% Figure Labels: Use 8 point Times New Roman for Figure labels. Use words 
-% rather than symbols or abbreviations when writing Figure axis labels to 
-% avoid confusing the reader. As an example, write the quantity 
-% ``Magnetization'', or ``Magnetization, M'', not just ``M''. If including 
-% units in the label, present them within parentheses. Do not label axes only 
-% with units. In the example, write ``Magnetization (A/m)'' or ``Magnetization 
-% \{A[m(1)]\}'', not just ``A/m''. Do not label axes with a ratio of 
-% quantities and units. For example, write ``Temperature (K)'', not 
-% ``Temperature/K''.
-
-% \section*{Acknowledgment}
-
-% The preferred spelling of the word ``acknowledgment'' in America is without 
-% an ``e'' after the ``g''. Avoid the stilted expression ``one of us (R. B. 
-% G.) thanks $\ldots$''. Instead, try ``R. B. G. thanks$\ldots$''. Put sponsor 
-% acknowledgments in the unnumbered footnote on the first page.
-
-% \section*{References}
-
-% Please number citations consecutively within brackets \cite{b1}. The 
-% sentence punctuation follows the bracket \cite{b2}. Refer simply to the reference 
-% number, as in \cite{b3}---do not use ``Ref. \cite{b3}'' or ``reference \cite{b3}'' except at 
-% the beginning of a sentence: ``Reference \cite{b3} was the first $\ldots$''
-
-% Number footnotes separately in superscripts. Place the actual footnote at 
-% the bottom of the column in which it was cited. Do not put footnotes in the 
-% abstract or reference list. Use letters for table footnotes.
-
-% Unless there are six authors or more give all authors' names; do not use 
-% ``et al.''. Papers that have not been published, even if they have been 
-% submitted for publication, should be cited as ``unpublished'' \cite{b4}. Papers 
-% that have been accepted for publication should be cited as ``in press'' \cite{b5}. 
-% Capitalize only the first word in a paper title, except for proper nouns and 
-% element symbols.
-
-% For papers published in translation journals, please give the English 
-% citation first, followed by the original foreign-language citation \cite{b6}.
+\section*{Source Code} \addcontentsline{toc}{section}{Source}
+Full source code of our project, including the data sets, can be found at:
+https://github.com/tokuosma/NLP2019
 
 \bibliographystyle{IEEEtran}
 \bibliography{IEEEabrv,project_15}
@@ -689,9 +576,10 @@ TODO
 \appendix
 
 \begin{itemize}
-
-    \item Figure : Emoticon usage in the hate speech and non-hate speech tweets 
-    \item Figure : Emoticon usage in the hate speech and non-hate speech tweets 
+    \item Figure 4 : Empath categories in the hate speech and non-hate speech tweets 
+    \item Figure 5 : Emoticon usage in the hate speech and non-hate speech tweets 
+    \item Figure 6 : Named entities in hate speech tweets
+    \item Figure 7 : Named entities in non-hate speech tweets
 \end{itemize}
 
 \begin{figure*}[!t] 
@@ -704,6 +592,19 @@ TODO
     \centering 
     \includegraphics[width=5.0in]{emoticons} \label{fig:emoticon_usage} \hfil 
     \caption{Emoticon usage in the hate speech and non-hate speech tweets.}     
+\end{figure*} 
+
+\begin{figure*}[!t] 
+  \centering 
+  \includegraphics[width=5.0in]{entities_hate} \label{fig:entities_hate} \hfil 
+  \caption{Named entities in hate speech tweets}     
+\end{figure*} 
+
+
+\begin{figure*}[!t] 
+  \centering 
+  \includegraphics[width=5.0in]{entities_no_hate} \label{fig:entities_non_hate} \hfil 
+  \caption{Named entities in non-hate speech tweets}     
 \end{figure*} 
 
 \end{document}
