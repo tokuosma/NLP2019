@@ -24,7 +24,6 @@ def analyse_users(source_file):
     no_very_neg_posts = 0
     highest_date = date(MINYEAR, 1, 1)
     lowest_date = date(MAXYEAR, 12, 31)
-    # analyzer = SentimentIntensityAnalyzer()
 
     with open(source_file,'r') as json_file:
         tweets = json.loads(json_file.read())
@@ -38,14 +37,9 @@ def analyse_users(source_file):
         text = re.sub(r'https?:\/\/.*[a-zA-Z0-9.\/_%…]*', '', text, flags=re.MULTILINE)
         text = re.sub(r'@[a-zA-Z0-9.\/_%…]*', '', text, flags=re.MULTILINE)
         testimonial = TextBlob(text)
-        # vs = analyzer.polarity_scores(text)
         current_date = datetime.strptime(tweet['created_at'], "%a %b %d %X %z %Y").date()
-        # tweets_and_sentiments.append((text, vs['compound']))
-        # sentiments.append(vs['compound'])
         tweets_and_sentiments.append((text, testimonial.sentiment.polarity))
         sentiments.append(testimonial.sentiment.polarity)
-        # print(text+'   '+str(testimonial.sentiment))
-        # if vs['compound'] < 0:
         if testimonial.sentiment.polarity < 0:
             no_neg_posts += 1
             if current_date < lowest_date:
@@ -54,9 +48,7 @@ def analyse_users(source_file):
                 highest_date = current_date
 
     sentiment_mean = mean(sentiments)
-    # print(sentiment_mean)
     sentiment_stdev = stdev(sentiments)
-    # print(sentiment_stdev)
 
     for tweet,sentiment in tweets_and_sentiments:
         standardized_value = (sentiment-sentiment_mean)/sentiment_stdev
@@ -69,7 +61,7 @@ def analyse_users(source_file):
     mean_sentiment_perc = (sentiment_mean + 1)* (1/2) # sentiment is between [-1,1]. [-1,1] -> [0,1]
     vol_neg_posts = no_neg_posts/len(tweets)
     vol_very_neg_posts = no_very_neg_posts/len(tweets)
-    radicalization_score = (7/mean_sentiment_perc**3)*vol_neg_posts*vol_very_neg_posts*float(time_active.days)
+    radicalization_score = (1/mean_sentiment_perc**3)*vol_neg_posts*vol_very_neg_posts*float(time_active.days)
 
     statistics_dict = {
     "source_file" : source_file,
@@ -84,12 +76,10 @@ def analyse_users(source_file):
     return statistics_dict
 if __name__ == "__main__":
 
-    source_files = ['Data\\tweets_user_ViidarUkonpoika.json', 'Data\\tweets_user_UKInfidel.json', 'Data\\tweets_user_DrDavidDuke.json']#, 'Data\\tweets_extremist.json', 'Data\\tweets_bombing.json', 'Data\\tweets_islamophobia.json', 'Data\\tweets_radicalist.json']
-    first_user = analyse_users('Data\\tweets_user_ViidarUkonpoika.json')
-    second_user = analyse_users('Data\\tweets_user_UKInfidel.json')
-    third_user = analyse_users('Data\\tweets_user_DrDavidDuke.json')
+    first_user = analyse_users('Data\\tweets_user_UK_citizen.json')
+    second_user = analyse_users('Data\\tweets_user_Finnish_citizen.json')
+    third_user = analyse_users('Data\\tweets_user_White_supremacist.json')
     
-
     print('file: ' + first_user["source_file"])
     print('mean sentiment percentile: ' + str(first_user["mean_sentiment_perc"]))
     print('volume of negative posts: ' + str(first_user["vol_neg_posts"]))
