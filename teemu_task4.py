@@ -3,15 +3,6 @@ from util import read_tweets, get_tweet_text, clean_tweet_text
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 import argparse
 
-"""my mission: plot the percentage of the various polarity 
-(positive, negative and neutral) for both annotated hate speech
-post and annotated non-hate speech post. Compare the results
-when you use an alternative sentiment analyzer of your choice.
-Ideally try to use a pre-trained sentiment analyzer and
-in the second approach a sentiment that uses part of our
-annotated hate speech and non-hate to enhance to generate
-the model. For this second case you may use tf-idf features."""
-
 #Negative (-1 - (-0,33...))
 #Neutral (-0,33... - 0,33...)
 #Positive (0,33... - 1)
@@ -19,10 +10,8 @@ the model. For this second case you may use tf-idf features."""
 def pre_trained_tweets_polarity(tweets):
     num_hate = num_non_hate = num_hate_negative = num_hate_neutral = num_hate_positive = num_non_hate_negative = num_non_hate_neutral = num_non_hate_positive = 0
     for tweet in tweets:
-        #category = ""
         text = clean_tweet_text(get_tweet_text(tweet))
         if(tweet["hate_speech"]):
-            #category = CATEGORY_HATE
             num_hate += 1
             polarity = TextBlob(text).polarity
             if(polarity < -0.333):
@@ -32,7 +21,6 @@ def pre_trained_tweets_polarity(tweets):
             else:
                 num_hate_positive += 1
         else:
-            #category = CATEGORY_NON_HATE
             num_non_hate += 1
             polarity = TextBlob(text).polarity
             if(polarity < -0.333):
@@ -56,10 +44,8 @@ def pre_trained_tweets_polarity(tweets):
 def trained_tweets_polarity(tweets):
     trained_num_hate = trained_num_non_hate = trained_num_hate_negative = trained_num_hate_neutral = trained_num_hate_positive = trained_num_non_hate_negative = trained_num_non_hate_neutral = trained_num_non_hate_positive = 0
     for tweet in tweets:
-        #category = ""
         text = clean_tweet_text(get_tweet_text(tweet))
         if(tweet["hate_speech"]):
-            #category = CATEGORY_HATE
             trained_num_hate += 1
             analyser = SentimentIntensityAnalyzer()
             res = analyser.polarity_scores(text)
@@ -71,7 +57,6 @@ def trained_tweets_polarity(tweets):
             else:
                 trained_num_hate_positive += 1
         else:
-            #category = CATEGORY_NON_HATE
             trained_num_non_hate += 1
             analyser = SentimentIntensityAnalyzer()
             res = analyser.polarity_scores(text)
