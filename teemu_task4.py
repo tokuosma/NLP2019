@@ -116,14 +116,14 @@ if __name__ == "__main__":
     width = 0.35
 
     fig, ax = plt.subplots()
-    rects1 = ax.bar(x - width/2, hate_values, width, label="hate_values")
-    rects2 = ax.bar(x + width/2, non_hate_values, width, label="non_hate_values")
+    rects1 = ax.bar(x - width/2, hate_values, width, label="hate")
+    rects2 = ax.bar(x + width/2, non_hate_values, width, label="non-hate")
 
     ax.set_ylabel("%")
     ax.set_title("Textblob results")
     ax.set_xticks(x)
     ax.set_xticklabels(labels)
-    ax.legend
+    ax.legend()
     plt.show()
 
     labels = ["Positive", "Neutral", "Negative"]
@@ -134,14 +134,14 @@ if __name__ == "__main__":
     width = 0.35
 
     fig, ax = plt.subplots()
-    rects1 = ax.bar(x - width/2, hate_values, width, label="hate_values")
-    rects2 = ax.bar(x + width/2, non_hate_values, width, label="non_hate_values")
+    rects1 = ax.bar(x - width/2, hate_values, width, label="hate")
+    rects2 = ax.bar(x + width/2, non_hate_values, width, label="non-hate")
 
     ax.set_ylabel("%")
     ax.set_title("Vader results")
     ax.set_xticks(x)
     ax.set_xticklabels(labels)
-    ax.legend
+    ax.legend()
     plt.show()
 
     labels = ["Positive", "Neutral", "Negative"]
@@ -152,12 +152,12 @@ if __name__ == "__main__":
     width = 0.35
 
     fig, ax = plt.subplots()
-    rects1 = ax.bar(x - width/2, hate_values, width, label="hate_values")
-    rects2 = ax.bar(x + width/2, non_hate_values, width, label="non_hate_values")
+    rects1 = ax.bar(x - width/2, hate_values, width, label="hate")
+    rects2 = ax.bar(x + width/2, non_hate_values, width, label="non-hate")
 
     ax.set_ylabel("%")
     ax.set_title("Textblob vs Vader")
     ax.set_xticks(x)
     ax.set_xticklabels(labels)
-    ax.legend
-    plt.tight_layout()
+    ax.legend()
+    plt.show()
