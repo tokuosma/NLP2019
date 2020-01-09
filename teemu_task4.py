@@ -1,6 +1,8 @@
 from textblob import TextBlob
 from util import read_tweets, get_tweet_text, clean_tweet_text
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
+import matplotlib.pyplot as plt
+import numpy as np
 import argparse
 
 #Negative (-1 - (-0,33...))
@@ -105,3 +107,57 @@ if __name__ == "__main__":
     print("The percentage of negative non hate is: ",vader_results[3])
     print("The percentage of neutral non hate is: ",vader_results[4])
     print("The percentage of positive non hate is: ",vader_results[5])
+
+    labels = ["Positive", "Neutral", "Negative"]
+    hate_values = [textblob_results[2], textblob_results[1], textblob_results[0]]
+    non_hate_values = [textblob_results[5], textblob_results[4], textblob_results[3]]
+
+    x = np.arange(len(labels))
+    width = 0.35
+
+    fig, ax = plt.subplots()
+    rects1 = ax.bar(x - width/2, hate_values, width, label="hate_values")
+    rects2 = ax.bar(x + width/2, non_hate_values, width, label="non_hate_values")
+
+    ax.set_ylabel("%")
+    ax.set_title("Textblob results")
+    ax.set_xticks(x)
+    ax.set_xticklabels(labels)
+    ax.legend
+    plt.show()
+
+    labels = ["Positive", "Neutral", "Negative"]
+    hate_values = [vader_results[2], vader_results[1], vader_results[0]]
+    non_hate_values = [vader_results[5], vader_results[4], vader_results[3]]
+
+    x = np.arange(len(labels))
+    width = 0.35
+
+    fig, ax = plt.subplots()
+    rects1 = ax.bar(x - width/2, hate_values, width, label="hate_values")
+    rects2 = ax.bar(x + width/2, non_hate_values, width, label="non_hate_values")
+
+    ax.set_ylabel("%")
+    ax.set_title("Vader results")
+    ax.set_xticks(x)
+    ax.set_xticklabels(labels)
+    ax.legend
+    plt.show()
+
+    labels = ["Positive", "Neutral", "Negative"]
+    hate_values = [abs(textblob_results[2] - vader_results[2]), abs(textblob_results[1] - vader_results[1]), abs(textblob_results[0] - vader_results[0])]
+    non_hate_values = [abs(textblob_results[5] - vader_results[5]), abs(textblob_results[4] - vader_results[4]), abs(textblob_results[3] - vader_results[3])]
+
+    x = np.arange(len(labels))
+    width = 0.35
+
+    fig, ax = plt.subplots()
+    rects1 = ax.bar(x - width/2, hate_values, width, label="hate_values")
+    rects2 = ax.bar(x + width/2, non_hate_values, width, label="non_hate_values")
+
+    ax.set_ylabel("%")
+    ax.set_title("Textblob vs Vader")
+    ax.set_xticks(x)
+    ax.set_xticklabels(labels)
+    ax.legend
+    plt.tight_layout()
