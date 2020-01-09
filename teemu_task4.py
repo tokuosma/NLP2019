@@ -7,7 +7,7 @@ import argparse
 #Neutral (-0,33... - 0,33...)
 #Positive (0,33... - 1)
 
-def pre_trained_tweets_polarity(tweets):
+def textblob_tweets_polarity(tweets):
     num_hate = num_non_hate = num_hate_negative = num_hate_neutral = num_hate_positive = num_non_hate_negative = num_non_hate_neutral = num_non_hate_positive = 0
     for tweet in tweets:
         text = clean_tweet_text(get_tweet_text(tweet))
@@ -41,7 +41,7 @@ def pre_trained_tweets_polarity(tweets):
     return negative_hate, neutral_hate, positive_hate, negative_non_hate, neutral_non_hate, positive_non_hate
 
 
-def trained_tweets_polarity(tweets):
+def vader_tweets_polarity(tweets):
     trained_num_hate = trained_num_non_hate = trained_num_hate_negative = trained_num_hate_neutral = trained_num_hate_positive = trained_num_non_hate_negative = trained_num_non_hate_neutral = trained_num_non_hate_positive = 0
     for tweet in tweets:
         text = clean_tweet_text(get_tweet_text(tweet))
@@ -87,7 +87,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
     source_files = vars(args)["source_files"] 
     tweets = read_tweets(source_files)
-    negative_hate, neutral_hate, positive_hate, negative_non_hate, neutral_non_hate, positive_non_hate = pre_trained_tweets_polarity(tweets)
+    negative_hate, neutral_hate, positive_hate, negative_non_hate, neutral_non_hate, positive_non_hate = textblob_tweets_polarity(tweets)
 
     print("The next 6 lines are for textblob sentiment analyzer")
     print("The percentage of negative hate is: ",negative_hate)
@@ -97,7 +97,7 @@ if __name__ == "__main__":
     print("The percentage of neutral non hate is: ",neutral_non_hate)
     print("The percentage of positive non hate is: ",positive_non_hate)
 
-    trained_negative_hate, trained_neutral_hate, trained_positive_hate, trained_negative_non_hate, trained_neutral_non_hate, trained_positive_non_hate = trained_tweets_polarity(tweets)
+    trained_negative_hate, trained_neutral_hate, trained_positive_hate, trained_negative_non_hate, trained_neutral_non_hate, trained_positive_non_hate = vader_tweets_polarity(tweets)
     
     print("The next 6 lines are for Vader sentiment analyzer")
     print("The percentage of negative hate is: ",trained_negative_hate)
