@@ -8,7 +8,7 @@ from datetime import MAXYEAR
 from datetime import MINYEAR
 from datetime import datetime
 from datetime import date
-# from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
+from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 # import pandas as pd
 
 
@@ -19,11 +19,13 @@ def analyse_users(source_file):
         
     tweets_and_sentiments = []
     sentiments = []
+    vader_sentiments = []
     very_neg_tweets_and_sentiments = []
     no_neg_posts = 0
     no_very_neg_posts = 0
     highest_date = date(MINYEAR, 1, 1)
     lowest_date = date(MAXYEAR, 12, 31)
+    analyzer = SentimentIntensityAnalyzer()
 
     with open(source_file,'r') as json_file:
         tweets = json.loads(json_file.read())
@@ -40,6 +42,7 @@ def analyse_users(source_file):
         current_date = datetime.strptime(tweet['created_at'], "%a %b %d %X %z %Y").date()
         tweets_and_sentiments.append((text, testimonial.sentiment.polarity))
         sentiments.append(testimonial.sentiment.polarity)
+        vader_sentiments.append(analyzer.polarity_scores(text)['compound'])
         if testimonial.sentiment.polarity < 0:
             no_neg_posts += 1
             if current_date < lowest_date:
@@ -71,7 +74,8 @@ def analyse_users(source_file):
     "days_active" : time_active.days,
     "radicalization_score" : radicalization_score,
     "very_neg_tweets_and_sentiments" : very_neg_tweets_and_sentiments,
-    "sentiments" : sentiments
+    "sentiments" : sentiments,
+    "vader_sentiments" : vader_sentiments
     }
     return statistics_dict
 if __name__ == "__main__":
