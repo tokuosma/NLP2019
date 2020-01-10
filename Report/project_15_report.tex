@@ -546,20 +546,7 @@ is probably partly due to the sentiment analyzers sole focus on adjectives. The 
 was unable to analyze more complex patterns in the tweets.
 TextBlobs default sentiment analyzer uses the same implementation as the "patterns" library does,
 and it has a certain drawback: it only takes adjectives into account. This lead to most of the 
-tweets sentiment scores to be zero. 
-
-We attempted to use another sentiment
-analyzator, one provided by vadersentiment,
-which was specifically designed to be used on social media, such as facebook or twitter. 
-The analyzator, however, proved to be problematic. 
-The variances of sentiments were too big when computing the \(SN\) to be in range of the sentiment, 
-which is on the range [-1, 1]. The specification of the \(SN\) is the proportion of the values which 
-have a standardized value smaller than -3, i.e, proportion of the values which are more than 3 standard 
-deviations away from the mean to the negative side. The variances of the sentiments were so large, that 
-a value so far from the mean would be out of range of the sentiment value for all of the users. This resulted 
-in \(SN\) being zero, which in turn resulted for the radicalization score being zero for all of the users. 
-Although the vadersentiment gave better results in the sense that it had less tweets with a neutral sentiment 
-value, due to this property of the \(SN\), it's usage had to be discontinued. \\
+tweets sentiment scores to be zero.
 
 \section{Conclusions}
 We experimented with several different methods in order to find features for identifying hate speech.
